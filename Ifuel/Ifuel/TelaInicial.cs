@@ -17,19 +17,19 @@ namespace Ifuel
             InitializeComponent();
         }
 
-        /*Botão que chama a tela de login do Usuário*/
+        /*Botão que chama a tela de LoginUser do Usuário*/
         private void usuario_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
+            LoginUser LoginUser = new LoginUser();
+            LoginUser.Show();
             Hide();
         }
 
-        /*Botão que chama a tela de login do Posto*/
+        /*Botão que chama a tela de LoginUser do Posto*/
         private void posto_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
+            LoginPosto LoginPosto = new LoginPosto();
+            LoginPosto.Show();
             Hide();
         }
     }
