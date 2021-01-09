@@ -44,7 +44,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(142, 19);
+            this.label1.Location = new System.Drawing.Point(146, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 22);
             this.label1.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(53, 59);
+            this.label2.Location = new System.Drawing.Point(54, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(310, 20);
             this.label2.TabIndex = 4;
@@ -64,7 +64,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(168, 91);
+            this.label3.Location = new System.Drawing.Point(169, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 19);
             this.label3.TabIndex = 5;
@@ -72,7 +72,7 @@
             // 
             // textUser
             // 
-            this.textUser.Location = new System.Drawing.Point(110, 123);
+            this.textUser.Location = new System.Drawing.Point(112, 123);
             this.textUser.Name = "textUser";
             this.textUser.Size = new System.Drawing.Size(178, 20);
             this.textUser.TabIndex = 6;
@@ -90,7 +90,7 @@
             // 
             // textSenha
             // 
-            this.textSenha.Location = new System.Drawing.Point(110, 186);
+            this.textSenha.Location = new System.Drawing.Point(112, 186);
             this.textSenha.Name = "textSenha";
             this.textSenha.Size = new System.Drawing.Size(178, 20);
             this.textSenha.TabIndex = 8;
@@ -99,7 +99,7 @@
             // btnLogar
             // 
             this.btnLogar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogar.Location = new System.Drawing.Point(141, 225);
+            this.btnLogar.Location = new System.Drawing.Point(143, 225);
             this.btnLogar.Name = "btnLogar";
             this.btnLogar.Size = new System.Drawing.Size(112, 26);
             this.btnLogar.TabIndex = 9;
@@ -121,7 +121,7 @@
             // btnCadastro
             // 
             this.btnCadastro.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastro.Location = new System.Drawing.Point(215, 272);
+            this.btnCadastro.Location = new System.Drawing.Point(216, 272);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(87, 26);
             this.btnCadastro.TabIndex = 11;

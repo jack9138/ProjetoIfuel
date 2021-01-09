@@ -86,7 +86,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(495, 310);
+            this.ClientSize = new System.Drawing.Size(494, 311);
             this.Controls.Add(this.posto);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usuario);
