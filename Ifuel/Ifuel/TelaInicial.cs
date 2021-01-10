@@ -32,5 +32,11 @@ namespace Ifuel
             LoginPosto.Show();
             Hide();
         }
+
+        /*Para não dar erro ' MSB3027: Could not copy '*/
+        private void TelaInicial_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

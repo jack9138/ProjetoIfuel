@@ -17,7 +17,7 @@ namespace Ifuel
     public partial class LoginPosto : Form
     {
         /*Conexão do Banco*/
-        string connectionString = @"Server= localhost;Initial Catalog= IFUEL;Integrated Security=True;";
+        //string connectionString = @"Server= localhost;Initial Catalog= IFUEL;Integrated Security=True;";
         public LoginPosto()
         {
             InitializeComponent();
@@ -29,6 +29,7 @@ namespace Ifuel
             // Close();
             MenuPosto menuPosto = new MenuPosto();
             menuPosto.Show();
+            Hide();
             #region Código de Teste não considerar
 
 
@@ -82,12 +83,17 @@ namespace Ifuel
             Close();//Falta criar tela de cadastro do Posto
         }
 
-        /*Botão para fazer Voltar a tela de menu*/
+        /*Botão para fazer Voltar a Tela Inicial*/
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             TelaInicial telaInicial = new TelaInicial();
             telaInicial.Show();
             Hide();
+        }
+
+        private void linkPerdaSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Criar método para enviar senha do usuário no email e mostrar mensagem que foi enviado.
         }
     }
 }

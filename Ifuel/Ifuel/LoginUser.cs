@@ -17,7 +17,7 @@ namespace Ifuel
     public partial class LoginUser : Form
     {
         /*Conexão do Banco*/
-        string connectionString = @"Server= localhost;Initial Catalog= IFUEL;Integrated Security=True;";
+       // string connectionString = @"Server= localhost;Initial Catalog= IFUEL;Integrated Security=True;";
       
         public LoginUser()
         {
@@ -79,7 +79,7 @@ namespace Ifuel
 
         }
 
-        /*Botão para fazer Voltar a tela de menu*/
+        /*Botão para fazer Voltar a Tela Inicial*/
         private void btnVoltar_Click(object sender, EventArgs e)
         {
 
@@ -91,9 +91,15 @@ namespace Ifuel
         /*Botão para fazer Cadastro*/
         private void btnCadastro_Click(object sender, EventArgs e)
         {
-            Close(); //Falta criar tela de cadastro para usuário
+            CadUsuario cadastro = new CadUsuario();
+            cadastro.Show();
+            Hide();
+            //Close(); //Falta criar tela de cadastro para usuário
         }
 
-        
+        private void linkPerdaSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Criar método para enviar senha do usuário no email e mostrar mensagem que foi enviado. 
+        }
     }
 }

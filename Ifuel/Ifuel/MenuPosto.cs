@@ -20,7 +20,9 @@ namespace Ifuel
         /*Botão para Atualizar valores dos combustiveis*/
         private void btnAtuPreco_Click(object sender, EventArgs e)
         {
-            Close();//Deve chamar a tela de Atualizar valores-Falta criar tela
+            AtuPreco atualiza = new AtuPreco();
+            atualiza.Show();
+            Hide();
         }
 
         /*Botão para ver as avaliações do Posto*/

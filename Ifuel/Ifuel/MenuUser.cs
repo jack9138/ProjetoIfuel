@@ -20,7 +20,9 @@ namespace Ifuel
         /*Botão para Pesquisar valor*/
         private void btnPesqPreco_Click(object sender, EventArgs e)
         {
-            Close();//Deve chamar tela de pesquisa
+            TelaPesquisa tela = new TelaPesquisa();
+            tela.Show();
+            Hide();
         }
 
         /*Botão para Avaliar Posto*/

@@ -38,6 +38,7 @@
             this.btnLogar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
+            this.linkPerdaSenha = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -99,9 +100,9 @@
             // btnLogar
             // 
             this.btnLogar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogar.Location = new System.Drawing.Point(143, 225);
+            this.btnLogar.Location = new System.Drawing.Point(149, 237);
             this.btnLogar.Name = "btnLogar";
-            this.btnLogar.Size = new System.Drawing.Size(112, 26);
+            this.btnLogar.Size = new System.Drawing.Size(99, 22);
             this.btnLogar.TabIndex = 9;
             this.btnLogar.Text = "Logar";
             this.btnLogar.UseVisualStyleBackColor = true;
@@ -129,11 +130,23 @@
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
+            // linkPerdaSenha
+            // 
+            this.linkPerdaSenha.AutoSize = true;
+            this.linkPerdaSenha.Location = new System.Drawing.Point(147, 214);
+            this.linkPerdaSenha.Name = "linkPerdaSenha";
+            this.linkPerdaSenha.Size = new System.Drawing.Size(108, 13);
+            this.linkPerdaSenha.TabIndex = 12;
+            this.linkPerdaSenha.TabStop = true;
+            this.linkPerdaSenha.Text = "Esqueceu a senha ? ";
+            this.linkPerdaSenha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPerdaSenha_LinkClicked);
+            // 
             // LoginPosto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 310);
+            this.Controls.Add(this.linkPerdaSenha);
             this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLogar);
@@ -164,5 +177,6 @@
         private System.Windows.Forms.Button btnLogar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnCadastro;
+        private System.Windows.Forms.LinkLabel linkPerdaSenha;
     }
 }
