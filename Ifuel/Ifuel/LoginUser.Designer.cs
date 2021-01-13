@@ -100,7 +100,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(95, 273);
+            this.btnVoltar.Location = new System.Drawing.Point(93, 273);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(87, 26);
             this.btnVoltar.TabIndex = 6;
@@ -122,7 +122,7 @@
             // btnCadastro
             // 
             this.btnCadastro.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastro.Location = new System.Drawing.Point(217, 273);
+            this.btnCadastro.Location = new System.Drawing.Point(216, 273);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(87, 26);
             this.btnCadastro.TabIndex = 8;
@@ -146,7 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(424, 310);
+            this.ClientSize = new System.Drawing.Size(417, 310);
             this.Controls.Add(this.linkPerdaSenha);
             this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.btnLogar);

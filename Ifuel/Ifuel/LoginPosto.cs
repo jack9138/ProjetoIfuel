@@ -79,8 +79,11 @@ namespace Ifuel
         /*Botão para fazer Cadastro*/
         private void btnCadastro_Click(object sender, EventArgs e)
         {
-            /*Deve chamar método de cadastro de usuário e tratar qualquer execeção*/
-            Close();//Falta criar tela de cadastro do Posto
+            /*Chama tela de cadastro*/
+            CadPosto cadPosto = new CadPosto();
+            cadPosto.Show();
+            Hide();
+            
         }
 
         /*Botão para fazer Voltar a Tela Inicial*/
@@ -93,7 +96,7 @@ namespace Ifuel
 
         private void linkPerdaSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Criar método para enviar senha do usuário no email e mostrar mensagem que foi enviado.
+            //Ver melhor opção para tela de troca de senha
         }
     }
 }

@@ -99,7 +99,7 @@ namespace Ifuel
 
         private void linkPerdaSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Criar método para enviar senha do usuário no email e mostrar mensagem que foi enviado. 
+            //Ver melhor opção para tela de troca de senha
         }
     }
 }

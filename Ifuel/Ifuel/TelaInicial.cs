@@ -33,7 +33,7 @@ namespace Ifuel
             Hide();
         }
 
-        /*Para não dar erro ' MSB3027: Could not copy '*/
+        /*Para fechar aplicação por completo*/
         private void TelaInicial_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
