@@ -28,16 +28,21 @@ namespace Ifuel
         /*Botão para Avaliar Posto*/
         private void btnAvaliar_Click(object sender, EventArgs e)
         {
-            Close();//Deve chamar tela de avaliação
+            TelaAvaliar avaliar = new TelaAvaliar();
+            avaliar.Show();
+            Hide();
         }
 
         /*Botão para atualizar cadastro do usuário*/
         private void btnAtuCad_Click(object sender, EventArgs e)
         {
-            Close();//Deve chamar tela de cadastro do Usuário;
+            //Ainda falta criar método para mostrar na Tela de Cadastro os dados já salvos do Uuário
+            CadUsuario cadUsuario = new CadUsuario();
+            cadUsuario.Show();
+            Hide();
         }
 
-        /*Botão para sair(Fecha programa)*/
+        /*Botão para sair(Fechar Programa)*/
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();

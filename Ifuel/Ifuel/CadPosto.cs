@@ -113,12 +113,14 @@ namespace Ifuel
             //Criar método de tratamento para receber os valores e salvar dos Bancos
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
+        public void btnVoltar_Click(object sender, EventArgs e)
         {
+
             LoginPosto login = new LoginPosto();
             login.Show();
             Hide();
+
         }
     }
-    
+
 }
