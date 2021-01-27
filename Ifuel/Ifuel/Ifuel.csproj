@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\jaque\Documents\ProjetoInterdisciplinar\Ifuel\TelasIfuel\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,14 +48,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="MySqlConnector, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.1.2.1\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -65,16 +86,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Management" />
-    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.0\lib\netstandard2.0\System.Memory.dll</HintPath>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Messaging" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
@@ -107,104 +128,118 @@
     <Reference Include="System.Xml">
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.22\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AtuPreco.cs">
+    <Compile Include="AtualizarValor.cs" />
+    <Compile Include="Avaliacao.cs" />
+    <Compile Include="CadastroP.cs" />
+    <Compile Include="Login.cs" />
+    <Compile Include="CadastroU.cs" />
+    <Compile Include="Combustivel.cs" />
+    <Compile Include="IfuelException.cs" />
+    <Compile Include="PesquisarValor.cs" />
+    <Compile Include="TelasIfuel\AtuPreco.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AtuPreco.Designer.cs">
+    <Compile Include="TelasIfuel\AtuPreco.Designer.cs">
       <DependentUpon>AtuPreco.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadPosto.cs">
+    <Compile Include="TelasIfuel\CadPosto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadPosto.Designer.cs">
+    <Compile Include="TelasIfuel\CadPosto.Designer.cs">
       <DependentUpon>CadPosto.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadUsuario.cs">
+    <Compile Include="TelasIfuel\CadUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadUsuario.Designer.cs">
+    <Compile Include="TelasIfuel\CadUsuario.Designer.cs">
       <DependentUpon>CadUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginPosto.cs">
+    <Compile Include="TelasIfuel\LoginPosto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginPosto.Designer.cs">
+    <Compile Include="TelasIfuel\LoginPosto.Designer.cs">
       <DependentUpon>LoginPosto.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPosto.cs">
+    <Compile Include="TelasIfuel\MenuPosto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPosto.Designer.cs">
+    <Compile Include="TelasIfuel\MenuPosto.Designer.cs">
       <DependentUpon>MenuPosto.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuUser.cs">
+    <Compile Include="TelasIfuel\MenuUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuUser.Designer.cs">
+    <Compile Include="TelasIfuel\MenuUser.Designer.cs">
       <DependentUpon>MenuUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaAvaliar.cs">
+    <Compile Include="TelasIfuel\TelaAvaliar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaAvaliar.Designer.cs">
+    <Compile Include="TelasIfuel\TelaAvaliar.Designer.cs">
       <DependentUpon>TelaAvaliar.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaInicial.cs">
+    <Compile Include="TelasIfuel\TelaInicial.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="TelaInicial.Designer.cs">
+    <Compile Include="TelasIfuel\TelaInicial.Designer.cs">
       <DependentUpon>TelaInicial.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="LoginUser.cs">
+    <Compile Include="TelasIfuel\LoginUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginUser.Designer.cs">
+    <Compile Include="TelasIfuel\LoginUser.Designer.cs">
       <DependentUpon>LoginUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TelaPesquisa.cs">
+    <Compile Include="TelasIfuel\TelaPesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaPesquisa.Designer.cs">
+    <Compile Include="TelasIfuel\TelaPesquisa.Designer.cs">
       <DependentUpon>TelaPesquisa.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaVerAvalia.cs">
+    <Compile Include="TelasIfuel\TelaVerAvalia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaVerAvalia.Designer.cs">
+    <Compile Include="TelasIfuel\TelaVerAvalia.Designer.cs">
       <DependentUpon>TelaVerAvalia.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AtuPreco.resx">
+    <EmbeddedResource Include="TelasIfuel\AtuPreco.resx">
       <DependentUpon>AtuPreco.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadPosto.resx">
+    <EmbeddedResource Include="TelasIfuel\CadPosto.resx">
       <DependentUpon>CadPosto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadUsuario.resx">
+    <EmbeddedResource Include="TelasIfuel\CadUsuario.resx">
       <DependentUpon>CadUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginPosto.resx">
+    <EmbeddedResource Include="TelasIfuel\LoginPosto.resx">
       <DependentUpon>LoginPosto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPosto.resx">
+    <EmbeddedResource Include="TelasIfuel\MenuPosto.resx">
       <DependentUpon>MenuPosto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuUser.resx">
+    <EmbeddedResource Include="TelasIfuel\MenuUser.resx">
       <DependentUpon>MenuUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaAvaliar.resx">
+    <EmbeddedResource Include="TelasIfuel\TelaAvaliar.resx">
       <DependentUpon>TelaAvaliar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaInicial.resx">
+    <EmbeddedResource Include="TelasIfuel\TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginUser.resx">
+    <EmbeddedResource Include="TelasIfuel\LoginUser.resx">
       <DependentUpon>LoginUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -216,10 +251,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TelaPesquisa.resx">
+    <EmbeddedResource Include="TelasIfuel\TelaPesquisa.resx">
       <DependentUpon>TelaPesquisa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaVerAvalia.resx">
+    <EmbeddedResource Include="TelasIfuel\TelaVerAvalia.resx">
       <DependentUpon>TelaVerAvalia.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

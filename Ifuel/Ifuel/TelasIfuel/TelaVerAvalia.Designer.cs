@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.selectPeriod = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.richMostraAvali = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.txtAvaliacoes = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +56,6 @@
             this.selectPeriod.Name = "selectPeriod";
             this.selectPeriod.Size = new System.Drawing.Size(173, 21);
             this.selectPeriod.TabIndex = 1;
-            this.selectPeriod.SelectedIndexChanged += new System.EventHandler(this.selectPeriod_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -67,15 +66,6 @@
             this.label2.Size = new System.Drawing.Size(221, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Selecione o periodo das avaliações";
-            // 
-            // richMostraAvali
-            // 
-            this.richMostraAvali.Location = new System.Drawing.Point(91, 153);
-            this.richMostraAvali.Name = "richMostraAvali";
-            this.richMostraAvali.Size = new System.Drawing.Size(281, 119);
-            this.richMostraAvali.TabIndex = 3;
-            this.richMostraAvali.Text = "";
-            this.richMostraAvali.TextChanged += new System.EventHandler(this.richMostraAvali_TextChanged);
             // 
             // label3
             // 
@@ -92,7 +82,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(190, 281);
+            this.btnVoltar.Location = new System.Drawing.Point(188, 281);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 25);
             this.btnVoltar.TabIndex = 5;
@@ -100,15 +90,23 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // txtAvaliacoes
+            // 
+            this.txtAvaliacoes.Location = new System.Drawing.Point(11, 165);
+            this.txtAvaliacoes.Name = "txtAvaliacoes";
+            this.txtAvaliacoes.Size = new System.Drawing.Size(470, 110);
+            this.txtAvaliacoes.TabIndex = 6;
+            this.txtAvaliacoes.Text = "";
+            // 
             // TelaVerAvalia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(494, 311);
+            this.Controls.Add(this.txtAvaliacoes);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.richMostraAvali);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.selectPeriod);
             this.Controls.Add(this.label1);
@@ -116,6 +114,7 @@
             this.Name = "TelaVerAvalia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizar Avaliações";
+            this.Load += new System.EventHandler(this.TelaVerAvalia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,8 +125,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox selectPeriod;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richMostraAvali;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.RichTextBox txtAvaliacoes;
     }
 }

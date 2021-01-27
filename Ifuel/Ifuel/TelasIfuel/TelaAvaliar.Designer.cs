@@ -32,7 +32,7 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnAvaliar = new System.Windows.Forms.Button();
             this.txtNomePosto = new System.Windows.Forms.TextBox();
-            this.richTxtComent = new System.Windows.Forms.RichTextBox();
+            this.txtComent = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,16 +70,14 @@
             this.txtNomePosto.Name = "txtNomePosto";
             this.txtNomePosto.Size = new System.Drawing.Size(200, 20);
             this.txtNomePosto.TabIndex = 2;
-            this.txtNomePosto.TextChanged += new System.EventHandler(this.txtNomePosto_TextChanged);
             // 
-            // richTxtComent
+            // txtComent
             // 
-            this.richTxtComent.Location = new System.Drawing.Point(146, 193);
-            this.richTxtComent.Name = "richTxtComent";
-            this.richTxtComent.Size = new System.Drawing.Size(200, 61);
-            this.richTxtComent.TabIndex = 4;
-            this.richTxtComent.Text = "";
-            this.richTxtComent.TextChanged += new System.EventHandler(this.richTxtComent_TextChanged);
+            this.txtComent.Location = new System.Drawing.Point(146, 193);
+            this.txtComent.Name = "txtComent";
+            this.txtComent.Size = new System.Drawing.Size(200, 61);
+            this.txtComent.TabIndex = 4;
+            this.txtComent.Text = "";
             // 
             // label1
             // 
@@ -143,7 +141,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTxtComent);
+            this.Controls.Add(this.txtComent);
             this.Controls.Add(this.txtNomePosto);
             this.Controls.Add(this.btnAvaliar);
             this.Controls.Add(this.btnVoltar);
@@ -161,7 +159,7 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnAvaliar;
         private System.Windows.Forms.TextBox txtNomePosto;
-        private System.Windows.Forms.RichTextBox richTxtComent;
+        private System.Windows.Forms.RichTextBox txtComent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

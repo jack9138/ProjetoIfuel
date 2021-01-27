@@ -33,10 +33,10 @@ namespace Ifuel
             Hide();
         }
 
-        /*Para fechar aplicação por completo*/
-        private void TelaInicial_FormClosing(object sender, FormClosingEventArgs e)
+        private void btnFechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
     }
 }

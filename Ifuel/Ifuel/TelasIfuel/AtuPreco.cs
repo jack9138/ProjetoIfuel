@@ -17,16 +17,10 @@ namespace Ifuel
             InitializeComponent();
         }
 
-        /*Caixa para selecionar combustíveis*/
-        private void selecComb_SelectedIndexChanged(object sender, EventArgs e)
+        /*Carrega o Form AtuPreco */
+        private void AtuPreco_Load(object sender, EventArgs e)
         {
-            //Criar opções de seleção
-        }
-
-        /*Caixa para digitar valor do combustível*/
-        private void textValor_TextChanged(object sender, EventArgs e)
-        {
-           //Criar método para converter valor da caixa de texto para formato igual do banco. 
+            //Colocar parte do código aqui. 
         }
 
         /*Botão para salvar o o novo valor*/

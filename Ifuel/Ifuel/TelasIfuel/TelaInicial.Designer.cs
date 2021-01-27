@@ -33,6 +33,7 @@
             this.usuario = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.posto = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             this.usuario.BackColor = System.Drawing.SystemColors.MenuBar;
             this.usuario.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
-            this.usuario.Location = new System.Drawing.Point(175, 169);
+            this.usuario.Location = new System.Drawing.Point(174, 167);
             this.usuario.Name = "usuario";
             this.usuario.Size = new System.Drawing.Size(139, 39);
             this.usuario.TabIndex = 5;
@@ -73,7 +74,7 @@
             // 
             this.posto.BackColor = System.Drawing.SystemColors.MenuBar;
             this.posto.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
-            this.posto.Location = new System.Drawing.Point(174, 245);
+            this.posto.Location = new System.Drawing.Point(173, 224);
             this.posto.Name = "posto";
             this.posto.Size = new System.Drawing.Size(139, 39);
             this.posto.TabIndex = 7;
@@ -81,12 +82,26 @@
             this.posto.UseVisualStyleBackColor = false;
             this.posto.Click += new System.EventHandler(this.posto_Click);
             // 
+            // btnFechar
+            // 
+            this.btnFechar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFechar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFechar.Location = new System.Drawing.Point(206, 276);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(75, 23);
+            this.btnFechar.TabIndex = 8;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(494, 311);
+            this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.posto);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usuario);
@@ -98,7 +113,6 @@
             this.Name = "TelaInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IFUEL";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaInicial_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,5 +125,6 @@
         private System.Windows.Forms.Button usuario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button posto;
+        private System.Windows.Forms.Button btnFechar;
     }
 }

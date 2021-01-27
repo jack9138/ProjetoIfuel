@@ -83,7 +83,6 @@
             this.selecComb.Name = "selecComb";
             this.selecComb.Size = new System.Drawing.Size(203, 22);
             this.selecComb.TabIndex = 5;
-            this.selecComb.SelectedIndexChanged += new System.EventHandler(this.selecComb_SelectedIndexChanged);
             // 
             // textValor
             // 
@@ -94,7 +93,6 @@
             this.textValor.Size = new System.Drawing.Size(100, 20);
             this.textValor.TabIndex = 6;
             this.textValor.Text = "R$";
-            this.textValor.TextChanged += new System.EventHandler(this.textValor_TextChanged);
             // 
             // label2
             // 
@@ -133,6 +131,7 @@
             this.Name = "AtuPreco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atualizar Preço";
+            this.Load += new System.EventHandler(this.AtuPreco_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

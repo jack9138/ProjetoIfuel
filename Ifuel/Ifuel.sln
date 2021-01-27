@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelasIfuel", "Ifuel\TelasIfuel.csproj", "{8A4D5463-F9C7-43EF-AC92-0CC275303552}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ifuel", "Ifuel\Ifuel.csproj", "{8A4D5463-F9C7-43EF-AC92-0CC275303552}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

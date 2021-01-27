@@ -16,17 +16,9 @@ namespace Ifuel
         {
             InitializeComponent();
         }
-
-        /*Seleciona o periodo de tempo para mostrar as avaliações*/
-        private void selectPeriod_SelectedIndexChanged(object sender, EventArgs e)
+        private void TelaVerAvalia_Load(object sender, EventArgs e)
         {
-            //Criar método para tratar seleção
-        }
-
-        /*Caixa de texto para mostrar avaliações*/
-        private void richMostraAvali_TextChanged(object sender, EventArgs e)
-        {
-            //Criar método para mostrar avaliações
+            //Carrega o form 
         }
 
         /*Botão para voltar ao Menu do Posto*/
@@ -36,5 +28,7 @@ namespace Ifuel
             menu.Show();
             Hide();
         }
+
+        
     }
 }

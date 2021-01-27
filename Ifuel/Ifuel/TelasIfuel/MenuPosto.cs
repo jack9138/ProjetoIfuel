@@ -47,7 +47,7 @@ namespace Ifuel
         /*Botão para sair(Fecha programa)*/
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
     }
 }

@@ -33,29 +33,37 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.textNomePosto = new System.Windows.Forms.TextBox();
+            this.txtNomePosto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textUF = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textCnpj = new System.Windows.Forms.TextBox();
-            this.textAlv = new System.Windows.Forms.TextBox();
+            this.txtUF = new System.Windows.Forms.TextBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.txtCnpj = new System.Windows.Forms.TextBox();
+            this.txtAlvara = new System.Windows.Forms.TextBox();
             this.checkAcordo = new System.Windows.Forms.CheckBox();
             this.linkTermo = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textEnd = new System.Windows.Forms.TextBox();
+            this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.selctComb1 = new System.Windows.Forms.ComboBox();
-            this.selectComb2 = new System.Windows.Forms.ComboBox();
-            this.selectComb3 = new System.Windows.Forms.ComboBox();
-            this.textValor1 = new System.Windows.Forms.TextBox();
-            this.textValor2 = new System.Windows.Forms.TextBox();
-            this.textValor3 = new System.Windows.Forms.TextBox();
+            this.txtValor1 = new System.Windows.Forms.TextBox();
+            this.txtValor2 = new System.Windows.Forms.TextBox();
+            this.txtValor3 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtComb1 = new System.Windows.Forms.TextBox();
+            this.txtComb2 = new System.Windows.Forms.TextBox();
+            this.txtComb3 = new System.Windows.Forms.TextBox();
+            this.txtCep = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -81,7 +89,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(93, 422);
+            this.btnVoltar.Location = new System.Drawing.Point(106, 422);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(88, 28);
             this.btnVoltar.TabIndex = 2;
@@ -100,14 +108,12 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // textNomePosto
+            // txtNomePosto
             // 
-            this.textNomePosto.Location = new System.Drawing.Point(69, 85);
-            this.textNomePosto.Name = "textNomePosto";
-            this.textNomePosto.Size = new System.Drawing.Size(343, 20);
-            this.textNomePosto.TabIndex = 4;
-            this.textNomePosto.Text = "Nome do Posto";
-            this.textNomePosto.TextChanged += new System.EventHandler(this.textNomePosto_TextChanged);
+            this.txtNomePosto.Location = new System.Drawing.Point(69, 85);
+            this.txtNomePosto.Name = "txtNomePosto";
+            this.txtNomePosto.Size = new System.Drawing.Size(343, 20);
+            this.txtNomePosto.TabIndex = 4;
             // 
             // label3
             // 
@@ -119,48 +125,40 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Nome do Posto ";
             // 
-            // textUF
+            // txtUF
             // 
-            this.textUF.Location = new System.Drawing.Point(69, 127);
-            this.textUF.Name = "textUF";
-            this.textUF.Size = new System.Drawing.Size(40, 20);
-            this.textUF.TabIndex = 6;
-            this.textUF.Text = "UF";
-            this.textUF.TextChanged += new System.EventHandler(this.textUF_TextChanged);
+            this.txtUF.Location = new System.Drawing.Point(69, 127);
+            this.txtUF.Name = "txtUF";
+            this.txtUF.Size = new System.Drawing.Size(40, 20);
+            this.txtUF.TabIndex = 6;
             // 
-            // textBox2
+            // txtCidade
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 20);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtCidade.Location = new System.Drawing.Point(116, 127);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(141, 20);
+            this.txtCidade.TabIndex = 7;
             // 
-            // textBox3
+            // txtBairro
             // 
-            this.textBox3.Location = new System.Drawing.Point(263, 127);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(149, 20);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtBairro.Location = new System.Drawing.Point(263, 127);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(149, 20);
+            this.txtBairro.TabIndex = 8;
             // 
-            // textCnpj
+            // txtCnpj
             // 
-            this.textCnpj.Location = new System.Drawing.Point(69, 211);
-            this.textCnpj.Name = "textCnpj";
-            this.textCnpj.Size = new System.Drawing.Size(149, 20);
-            this.textCnpj.TabIndex = 9;
-            this.textCnpj.Text = "CNPJ";
-            this.textCnpj.TextChanged += new System.EventHandler(this.textCnpj_TextChanged);
+            this.txtCnpj.Location = new System.Drawing.Point(69, 211);
+            this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.Size = new System.Drawing.Size(149, 20);
+            this.txtCnpj.TabIndex = 9;
             // 
-            // textAlv
+            // txtAlvara
             // 
-            this.textAlv.Location = new System.Drawing.Point(234, 211);
-            this.textAlv.Name = "textAlv";
-            this.textAlv.Size = new System.Drawing.Size(178, 20);
-            this.textAlv.TabIndex = 10;
-            this.textAlv.Text = "Alvará";
-            this.textAlv.TextChanged += new System.EventHandler(this.textAlv_TextChanged);
+            this.txtAlvara.Location = new System.Drawing.Point(234, 211);
+            this.txtAlvara.Name = "txtAlvara";
+            this.txtAlvara.Size = new System.Drawing.Size(178, 20);
+            this.txtAlvara.TabIndex = 10;
             // 
             // checkAcordo
             // 
@@ -171,7 +169,6 @@
             this.checkAcordo.TabIndex = 11;
             this.checkAcordo.Text = "Eu concordo com os termos de uso do aplicativo IFUEL.";
             this.checkAcordo.UseVisualStyleBackColor = true;
-            this.checkAcordo.CheckedChanged += new System.EventHandler(this.checkAcordo_CheckedChanged);
             // 
             // linkTermo
             // 
@@ -214,14 +211,12 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Bairro";
             // 
-            // textEnd
+            // txtEndereco
             // 
-            this.textEnd.Location = new System.Drawing.Point(69, 167);
-            this.textEnd.Name = "textEnd";
-            this.textEnd.Size = new System.Drawing.Size(343, 20);
-            this.textEnd.TabIndex = 16;
-            this.textEnd.Text = "Endereço";
-            this.textEnd.TextChanged += new System.EventHandler(this.textEnd_TextChanged);
+            this.txtEndereco.Location = new System.Drawing.Point(69, 167);
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(237, 20);
+            this.txtEndereco.TabIndex = 16;
             // 
             // label7
             // 
@@ -252,69 +247,128 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Alvará";
             // 
-            // selctComb1
+            // txtValor1
             // 
-            this.selctComb1.FormattingEnabled = true;
-            this.selctComb1.Location = new System.Drawing.Point(106, 306);
-            this.selctComb1.Name = "selctComb1";
-            this.selctComb1.Size = new System.Drawing.Size(140, 21);
-            this.selctComb1.TabIndex = 20;
-            this.selctComb1.SelectedIndexChanged += new System.EventHandler(this.selctComb1_SelectedIndexChanged);
+            this.txtValor1.Location = new System.Drawing.Point(287, 315);
+            this.txtValor1.Name = "txtValor1";
+            this.txtValor1.Size = new System.Drawing.Size(38, 20);
+            this.txtValor1.TabIndex = 23;
             // 
-            // selectComb2
+            // txtValor2
             // 
-            this.selectComb2.FormattingEnabled = true;
-            this.selectComb2.Location = new System.Drawing.Point(106, 342);
-            this.selectComb2.Name = "selectComb2";
-            this.selectComb2.Size = new System.Drawing.Size(140, 21);
-            this.selectComb2.TabIndex = 21;
-            this.selectComb2.SelectedIndexChanged += new System.EventHandler(this.selectComb2_SelectedIndexChanged);
+            this.txtValor2.Location = new System.Drawing.Point(287, 349);
+            this.txtValor2.Name = "txtValor2";
+            this.txtValor2.Size = new System.Drawing.Size(38, 20);
+            this.txtValor2.TabIndex = 24;
             // 
-            // selectComb3
+            // txtValor3
             // 
-            this.selectComb3.FormattingEnabled = true;
-            this.selectComb3.Location = new System.Drawing.Point(106, 381);
-            this.selectComb3.Name = "selectComb3";
-            this.selectComb3.Size = new System.Drawing.Size(140, 21);
-            this.selectComb3.TabIndex = 22;
-            this.selectComb3.SelectedIndexChanged += new System.EventHandler(this.selectComb3_SelectedIndexChanged);
-            // 
-            // textValor1
-            // 
-            this.textValor1.Location = new System.Drawing.Point(268, 307);
-            this.textValor1.Name = "textValor1";
-            this.textValor1.Size = new System.Drawing.Size(63, 20);
-            this.textValor1.TabIndex = 23;
-            this.textValor1.Text = "R$";
-            this.textValor1.TextChanged += new System.EventHandler(this.textValor1_TextChanged);
-            // 
-            // textValor2
-            // 
-            this.textValor2.Location = new System.Drawing.Point(268, 343);
-            this.textValor2.Name = "textValor2";
-            this.textValor2.Size = new System.Drawing.Size(63, 20);
-            this.textValor2.TabIndex = 24;
-            this.textValor2.Text = "R$";
-            this.textValor2.TextChanged += new System.EventHandler(this.textValor2_TextChanged);
-            // 
-            // textValor3
-            // 
-            this.textValor3.Location = new System.Drawing.Point(268, 382);
-            this.textValor3.Name = "textValor3";
-            this.textValor3.Size = new System.Drawing.Size(63, 20);
-            this.textValor3.TabIndex = 25;
-            this.textValor3.Text = "R$";
-            this.textValor3.TextChanged += new System.EventHandler(this.textValor3_TextChanged);
+            this.txtValor3.Location = new System.Drawing.Point(287, 381);
+            this.txtValor3.Name = "txtValor3";
+            this.txtValor3.Size = new System.Drawing.Size(38, 20);
+            this.txtValor3.TabIndex = 25;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(107, 276);
+            this.label10.Location = new System.Drawing.Point(89, 276);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(255, 17);
+            this.label10.Size = new System.Drawing.Size(291, 17);
             this.label10.TabIndex = 26;
-            this.label10.Text = "Selecione o Combustível e informe o valor";
+            this.label10.Text = "Digite o nome do Combustível e informe o valor";
+            // 
+            // txtComb1
+            // 
+            this.txtComb1.Location = new System.Drawing.Point(129, 315);
+            this.txtComb1.Name = "txtComb1";
+            this.txtComb1.Size = new System.Drawing.Size(113, 20);
+            this.txtComb1.TabIndex = 27;
+            // 
+            // txtComb2
+            // 
+            this.txtComb2.Location = new System.Drawing.Point(129, 349);
+            this.txtComb2.Name = "txtComb2";
+            this.txtComb2.Size = new System.Drawing.Size(113, 20);
+            this.txtComb2.TabIndex = 28;
+            // 
+            // txtComb3
+            // 
+            this.txtComb3.Location = new System.Drawing.Point(129, 381);
+            this.txtComb3.Name = "txtComb3";
+            this.txtComb3.Size = new System.Drawing.Size(113, 20);
+            this.txtComb3.TabIndex = 29;
+            // 
+            // txtCep
+            // 
+            this.txtCep.Location = new System.Drawing.Point(312, 167);
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(100, 20);
+            this.txtCep.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(312, 150);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(28, 16);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "CEP";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(88, 318);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Nome";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(88, 352);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 13);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Nome";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(88, 384);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(35, 13);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Nome";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(260, 318);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(21, 13);
+            this.label15.TabIndex = 35;
+            this.label15.Text = "R$";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(261, 352);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(21, 13);
+            this.label16.TabIndex = 36;
+            this.label16.Text = "R$";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(261, 385);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(21, 13);
+            this.label17.TabIndex = 37;
+            this.label17.Text = "R$";
             // 
             // CadPosto
             // 
@@ -322,29 +376,37 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(483, 462);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.txtComb3);
+            this.Controls.Add(this.txtComb2);
+            this.Controls.Add(this.txtComb1);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textValor3);
-            this.Controls.Add(this.textValor2);
-            this.Controls.Add(this.textValor1);
-            this.Controls.Add(this.selectComb3);
-            this.Controls.Add(this.selectComb2);
-            this.Controls.Add(this.selctComb1);
+            this.Controls.Add(this.txtValor3);
+            this.Controls.Add(this.txtValor2);
+            this.Controls.Add(this.txtValor1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textEnd);
+            this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.linkTermo);
             this.Controls.Add(this.checkAcordo);
-            this.Controls.Add(this.textAlv);
-            this.Controls.Add(this.textCnpj);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textUF);
+            this.Controls.Add(this.txtAlvara);
+            this.Controls.Add(this.txtCnpj);
+            this.Controls.Add(this.txtBairro);
+            this.Controls.Add(this.txtCidade);
+            this.Controls.Add(this.txtUF);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textNomePosto);
+            this.Controls.Add(this.txtNomePosto);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label2);
@@ -364,28 +426,36 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.TextBox textNomePosto;
+        private System.Windows.Forms.TextBox txtNomePosto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textUF;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textCnpj;
-        private System.Windows.Forms.TextBox textAlv;
+        private System.Windows.Forms.TextBox txtUF;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.TextBox txtBairro;
+        private System.Windows.Forms.TextBox txtCnpj;
+        private System.Windows.Forms.TextBox txtAlvara;
         private System.Windows.Forms.CheckBox checkAcordo;
         private System.Windows.Forms.LinkLabel linkTermo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textEnd;
+        private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox selctComb1;
-        private System.Windows.Forms.ComboBox selectComb2;
-        private System.Windows.Forms.ComboBox selectComb3;
-        private System.Windows.Forms.TextBox textValor1;
-        private System.Windows.Forms.TextBox textValor2;
-        private System.Windows.Forms.TextBox textValor3;
+        private System.Windows.Forms.TextBox txtValor1;
+        private System.Windows.Forms.TextBox txtValor2;
+        private System.Windows.Forms.TextBox txtValor3;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtComb1;
+        private System.Windows.Forms.TextBox txtComb2;
+        private System.Windows.Forms.TextBox txtComb3;
+        private System.Windows.Forms.TextBox txtCep;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }
