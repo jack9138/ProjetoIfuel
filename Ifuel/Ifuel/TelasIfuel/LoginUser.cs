@@ -29,7 +29,10 @@ namespace Ifuel
         {
             try
             {
+                string Email = textUser.Text;
+                string Senha = textSenha.Text;
                 Login loginU = new Login();
+                loginU.getLoginUser(Email, Senha);
                 if (loginU.Logar == true)
                 {
                     MenuUser menuUser = new MenuUser();
@@ -40,18 +43,11 @@ namespace Ifuel
                 {
                     MessageBox.Show("Erro Login\nVerificar campos");
                 }
-            }/*Trata erros do Banco*/
-            catch (MySqlException erro)
-            {
-                StringBuilder str = new StringBuilder();
-                str.AppendLine(erro.Message);
-                str.Append(erro.SqlState);
-                str.AppendLine("\n");
-                str.AppendLine(erro.StackTrace);
-
-                MessageBox.Show(str.ToString());
+                else
+                {
+                    MessageBox.Show(loginU.message);
+                }
             }
-
             /*Trata erro do Programa*/
             catch (IfuelException erro)
             {
@@ -87,6 +83,7 @@ namespace Ifuel
         private void linkPerdaSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //Ver melhor opção para tela de troca de senha
+            //Talvez criar tela para cadastrar nova senha ou só mostrar a senha. 
         }
     }
 }

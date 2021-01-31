@@ -36,8 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.selectNota = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textNota = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -103,22 +103,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(138, 111);
+            this.label3.Location = new System.Drawing.Point(148, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(212, 19);
+            this.label3.Size = new System.Drawing.Size(190, 19);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Selecione uma nota para o posto";
-            // 
-            // selectNota
-            // 
-            this.selectNota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.selectNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selectNota.FormattingEnabled = true;
-            this.selectNota.Location = new System.Drawing.Point(163, 135);
-            this.selectNota.Name = "selectNota";
-            this.selectNota.Size = new System.Drawing.Size(162, 21);
-            this.selectNota.TabIndex = 8;
-            this.selectNota.SelectedIndexChanged += new System.EventHandler(this.selectNota_SelectedIndexChanged);
+            this.label3.Text = "Digite uma nota para o posto";
             // 
             // label4
             // 
@@ -130,14 +119,21 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Deixe um comentário";
             // 
+            // textNota
+            // 
+            this.textNota.Location = new System.Drawing.Point(194, 133);
+            this.textNota.Name = "textNota";
+            this.textNota.Size = new System.Drawing.Size(100, 20);
+            this.textNota.TabIndex = 10;
+            // 
             // TelaAvaliar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(494, 311);
+            this.Controls.Add(this.textNota);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.selectNota);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -163,7 +159,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox selectNota;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textNota;
     }
 }

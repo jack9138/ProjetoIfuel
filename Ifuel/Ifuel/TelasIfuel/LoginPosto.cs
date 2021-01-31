@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ifuel;
 using Microsoft.SqlServer;
-using MySqlConnector;
+using MySql.Data.MySqlClient;
 
 namespace Ifuel
 {
@@ -27,11 +27,11 @@ namespace Ifuel
         {
             try
             {
-                string Cnpj;
+                string User;
                 string Senha;
-                Cnpj = textUser.Text;
+                User = textUser.Text;
                 Senha = textSenha.Text;
-                loginP.getLoginPosto(Cnpj, Senha);
+                loginP.getLoginPosto(User, Senha);
 
                 if (loginP.Logar == true)
                 {
@@ -42,6 +42,10 @@ namespace Ifuel
                 else if (loginP.Logar == false)
                 {
                     MessageBox.Show("Erro Login\nVerifique os campos");
+                }
+                else
+                {
+                    MessageBox.Show(loginP.message);
                 }
             }
             /*Trata erros do Banco*/

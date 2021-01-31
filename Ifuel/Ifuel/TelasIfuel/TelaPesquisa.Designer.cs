@@ -32,12 +32,12 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.selecCidade = new System.Windows.Forms.ComboBox();
-            this.selecBairro = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.selecComb = new System.Windows.Forms.ComboBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.txtComb = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -74,74 +74,56 @@
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // selecCidade
-            // 
-            this.selecCidade.BackColor = System.Drawing.SystemColors.Info;
-            this.selecCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.selecCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selecCidade.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selecCidade.FormattingEnabled = true;
-            this.selecCidade.Location = new System.Drawing.Point(142, 86);
-            this.selecCidade.Name = "selecCidade";
-            this.selecCidade.Size = new System.Drawing.Size(191, 22);
-            this.selecCidade.TabIndex = 3;
-            this.selecCidade.SelectedIndexChanged += new System.EventHandler(this.selecCidade_SelectedIndexChanged);
-            // 
-            // selecBairro
-            // 
-            this.selecBairro.BackColor = System.Drawing.SystemColors.Info;
-            this.selecBairro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.selecBairro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selecBairro.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selecBairro.FormattingEnabled = true;
-            this.selecBairro.Location = new System.Drawing.Point(142, 150);
-            this.selecBairro.Name = "selecBairro";
-            this.selecBairro.Size = new System.Drawing.Size(191, 22);
-            this.selecBairro.TabIndex = 4;
-            this.selecBairro.SelectedIndexChanged += new System.EventHandler(this.selecBairro_SelectedIndexChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(174, 63);
+            this.label2.Location = new System.Drawing.Point(178, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 17);
+            this.label2.Size = new System.Drawing.Size(103, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Selecione a Cidade";
+            this.label2.Text = "Digite a Cidade";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(177, 130);
+            this.label3.Location = new System.Drawing.Point(180, 126);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 17);
+            this.label3.Size = new System.Drawing.Size(99, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Selecione o Bairro";
+            this.label3.Text = "Digite o Bairro";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(158, 197);
+            this.label4.Location = new System.Drawing.Point(163, 190);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 17);
+            this.label4.Size = new System.Drawing.Size(139, 17);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Selecione o Combustível";
+            this.label4.Text = "Digite o Combustível";
             // 
-            // selecComb
+            // txtCidade
             // 
-            this.selecComb.BackColor = System.Drawing.SystemColors.Info;
-            this.selecComb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.selecComb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selecComb.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selecComb.FormattingEnabled = true;
-            this.selecComb.Location = new System.Drawing.Point(142, 216);
-            this.selecComb.Name = "selecComb";
-            this.selecComb.Size = new System.Drawing.Size(191, 22);
-            this.selecComb.TabIndex = 8;
-            this.selecComb.SelectedIndexChanged += new System.EventHandler(this.selecComb_SelectedIndexChanged);
+            this.txtCidade.Location = new System.Drawing.Point(153, 87);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(156, 20);
+            this.txtCidade.TabIndex = 8;
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Location = new System.Drawing.Point(153, 153);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(156, 20);
+            this.txtBairro.TabIndex = 9;
+            // 
+            // txtComb
+            // 
+            this.txtComb.Location = new System.Drawing.Point(153, 216);
+            this.txtComb.Name = "txtComb";
+            this.txtComb.Size = new System.Drawing.Size(156, 20);
+            this.txtComb.TabIndex = 10;
             // 
             // TelaPesquisa
             // 
@@ -149,12 +131,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(494, 311);
-            this.Controls.Add(this.selecComb);
+            this.Controls.Add(this.txtComb);
+            this.Controls.Add(this.txtBairro);
+            this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.selecBairro);
-            this.Controls.Add(this.selecCidade);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVoltar);
@@ -172,11 +154,11 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.ComboBox selecCidade;
-        private System.Windows.Forms.ComboBox selecBairro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox selecComb;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.TextBox txtBairro;
+        private System.Windows.Forms.TextBox txtComb;
     }
 }

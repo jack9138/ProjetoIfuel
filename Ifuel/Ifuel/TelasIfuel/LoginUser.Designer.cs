@@ -57,15 +57,14 @@
             this.textUser.Name = "textUser";
             this.textUser.Size = new System.Drawing.Size(178, 20);
             this.textUser.TabIndex = 1;
-            this.textUser.Text = "Digite seu usuário";
             // 
             // textSenha
             // 
             this.textSenha.Location = new System.Drawing.Point(113, 187);
             this.textSenha.Name = "textSenha";
+            this.textSenha.PasswordChar = '*';
             this.textSenha.Size = new System.Drawing.Size(178, 20);
             this.textSenha.TabIndex = 2;
-            this.textSenha.Text = "Digite sua senha";
             // 
             // label2
             // 
@@ -100,7 +99,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(93, 273);
+            this.btnVoltar.Location = new System.Drawing.Point(95, 273);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(87, 26);
             this.btnVoltar.TabIndex = 6;

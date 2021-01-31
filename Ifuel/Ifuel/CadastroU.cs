@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 using MySql.Data.Common;
 using MySql.Data.MySqlClient;
@@ -12,7 +13,8 @@ namespace Ifuel
     {
         /*String para conectar no Banco*/
         MySqlConnection conectar;
-        string connectionString = @"Server=127.0.0.1;UserId=root;Password=Dev@9138;Database=IFUEL";
+        string connectionString = @"Server=localhost;Port=3306;Database=ifuel;Uid=Dev;Pwd=Dev@9138;";
+        
         #region Declaração de variáveis
         /*Dados cadastro do Usuário*/
         string NomeUser;
@@ -54,37 +56,34 @@ namespace Ifuel
             
             try
             {
+                /*Comandos de Conexão e banco*/
+                MySqlCommand Command = new MySqlCommand();
                 conectar = new MySqlConnection(connectionString);
+                conectar.Open();
                 if (!string.IsNullOrEmpty(NomeUser) || !string.IsNullOrEmpty(Email) || !string.IsNullOrEmpty(CPF)) 
                 {
                     #region Inserir dados na Tabela Cliente
+                    Command.Connection = conectar;
+                    Command.CommandType = CommandType.Text;
                     /*String para inserir cadastro na tabela Cliente*/
-                    string sqlCadastro = "(INSERT INTO CLIENTE(NOME_CLIENTE,Email_Cliente,CPF,Bairro,CIDADE)" +
-                                        "VALUES (@NomeUser, @Email,@CPF,@Bairro,@Cidade) )";
-                    MySqlCommand insertCad = new MySqlCommand(sqlCadastro, conectar);//Comando para inserir cadastro
-                    insertCad.Parameters.Add("@NomeUser", MySqlDbType.VarChar).Value = NomeUser;
-                    insertCad.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = CPF;
-                    insertCad.Parameters.Add("@Email", MySqlDbType.VarChar).Value = Email;
-                    insertCad.Parameters.Add("@Bairro", MySqlDbType.VarChar).Value = Bairro;
-                    insertCad.Parameters.Add("@Cidade", MySqlDbType.VarChar).Value = Cidade;
+                    Command.CommandText = "INSERT INTO CLIENTE VALUES ( 0,'"+NomeUser+"','"+Email+ "','" + CPF + "','" + Bairro+ "','"+Cidade+"')";
+                    Command.ExecuteNonQuery();
+                    
                     #endregion
 
                     #region Inserir dados na tabela Usersistema
 
                     /*Select para buscar o ID do Cliente cadastrado */
-                    string sqlSelectId = "(SELECT LAST_INSTER_ID() FROM POSTO)";
-                    MySqlCommand comandSelect = new MySqlCommand(sqlSelectId, conectar);
-                    ID_Cliente = Convert.ToInt32(comandSelect);
+                    
+                    Command.CommandText= "SELECT MAX(ID_CLIENTE) FROM CLIENTE;";
+                    int Id = (int)Command.ExecuteScalar();
 
-                    string sqlLogin = "( INSERT INTO POSTOSISTEMA(ID_USR, LOGIN_USR, SENHA_USR)" +
-                                                 "VALUES(@ID_Cliente,@Email,@Senha) ";
-                    MySqlCommand insertLogin = new MySqlCommand(sqlLogin, conectar);
-                    insertLogin.Parameters.Add("@ID_POSTO", MySqlDbType.Int64).Value = ID_Cliente;
-                    insertLogin.Parameters.Add("@Email", MySqlDbType.VarChar).Value = Email;
-                    insertLogin.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = Senha;
+                    /*Inserir dados na tabela USERSISTEMA */
+                    Command.CommandText = "INSERT INTO USERSISTEMA VALUES('" + Email + "','" + Senha + "','" + Id+"')";
+                    Command.ExecuteNonQuery();
                     #endregion
 
-                   
+                    conectar.Close();
                 }
                 else
                 {
@@ -104,6 +103,8 @@ namespace Ifuel
                 str.AppendLine("\n");
                 str.AppendLine(erro.StackTrace);
                 messageErro = str.ToString();
+
+                conectar.Close();
             }
 
             /*Trata erro do Programa*/

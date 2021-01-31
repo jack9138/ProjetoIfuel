@@ -17,13 +17,6 @@ namespace Ifuel
             InitializeComponent();
         }
 
-       
-        /*Caixa de seleção- Possui as notas para avaliar*/
-        private void selectNota_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Criar método para mostrar e tratar as notas
-        }
-
         /*Botão para voltar ao menu*/
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -35,8 +28,26 @@ namespace Ifuel
         /*Botão para salvar avaliação*/
         private void btnAvaliar_Click(object sender, EventArgs e)
         {
-            //Criar método para confirmar dados recebidos e salvar no Banco. 
-            Close();
+            int nota = int.Parse(textNota.Text);
+            string coment = txtComent.Text;
+            string nomePosto = txtNomePosto.Text;
+            DateTime date = new DateTime();
+
+
+            try
+            {
+                Avaliacao av = new Avaliacao(coment,nomePosto,nota,date.ToLocalTime());
+                av.setAvaliacao();
+            }
+            /*Trata erro do Programa*/
+            catch (IfuelException erro)
+            {
+                StringBuilder str = new StringBuilder();
+                str.AppendLine(erro.Message);
+                str.AppendLine("\n");
+                str.AppendLine(erro.StackTrace);
+                 MessageBox.Show(str.ToString());
+            }
         }
     }
 }

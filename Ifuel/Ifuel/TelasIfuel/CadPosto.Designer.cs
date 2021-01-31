@@ -38,8 +38,6 @@
             this.txtUF = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
-            this.txtCnpj = new System.Windows.Forms.TextBox();
-            this.txtAlvara = new System.Windows.Forms.TextBox();
             this.checkAcordo = new System.Windows.Forms.CheckBox();
             this.linkTermo = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,21 +47,20 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtValor1 = new System.Windows.Forms.TextBox();
-            this.txtValor2 = new System.Windows.Forms.TextBox();
-            this.txtValor3 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtComb1 = new System.Windows.Forms.TextBox();
-            this.txtComb2 = new System.Windows.Forms.TextBox();
-            this.txtComb3 = new System.Windows.Forms.TextBox();
-            this.txtCep = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.txtValor1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtValor2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtValor3 = new System.Windows.Forms.MaskedTextBox();
+            this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
+            this.txtAlvara = new System.Windows.Forms.MaskedTextBox();
+            this.txtCep = new System.Windows.Forms.MaskedTextBox();
+            this.selctComb1 = new System.Windows.Forms.CheckBox();
+            this.selctComb2 = new System.Windows.Forms.CheckBox();
+            this.selctComb3 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -146,20 +143,6 @@
             this.txtBairro.Size = new System.Drawing.Size(149, 20);
             this.txtBairro.TabIndex = 8;
             // 
-            // txtCnpj
-            // 
-            this.txtCnpj.Location = new System.Drawing.Point(69, 211);
-            this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(149, 20);
-            this.txtCnpj.TabIndex = 9;
-            // 
-            // txtAlvara
-            // 
-            this.txtAlvara.Location = new System.Drawing.Point(234, 211);
-            this.txtAlvara.Name = "txtAlvara";
-            this.txtAlvara.Size = new System.Drawing.Size(178, 20);
-            this.txtAlvara.TabIndex = 10;
-            // 
             // checkAcordo
             // 
             this.checkAcordo.AutoSize = true;
@@ -241,70 +224,21 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(233, 191);
+            this.label9.Location = new System.Drawing.Point(238, 191);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 16);
             this.label9.TabIndex = 19;
             this.label9.Text = "Alvará";
             // 
-            // txtValor1
-            // 
-            this.txtValor1.Location = new System.Drawing.Point(287, 315);
-            this.txtValor1.Name = "txtValor1";
-            this.txtValor1.Size = new System.Drawing.Size(38, 20);
-            this.txtValor1.TabIndex = 23;
-            // 
-            // txtValor2
-            // 
-            this.txtValor2.Location = new System.Drawing.Point(287, 349);
-            this.txtValor2.Name = "txtValor2";
-            this.txtValor2.Size = new System.Drawing.Size(38, 20);
-            this.txtValor2.TabIndex = 24;
-            // 
-            // txtValor3
-            // 
-            this.txtValor3.Location = new System.Drawing.Point(287, 381);
-            this.txtValor3.Name = "txtValor3";
-            this.txtValor3.Size = new System.Drawing.Size(38, 20);
-            this.txtValor3.TabIndex = 25;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(89, 276);
+            this.label10.Location = new System.Drawing.Point(104, 280);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(291, 17);
+            this.label10.Size = new System.Drawing.Size(255, 17);
             this.label10.TabIndex = 26;
-            this.label10.Text = "Digite o nome do Combustível e informe o valor";
-            // 
-            // txtComb1
-            // 
-            this.txtComb1.Location = new System.Drawing.Point(129, 315);
-            this.txtComb1.Name = "txtComb1";
-            this.txtComb1.Size = new System.Drawing.Size(113, 20);
-            this.txtComb1.TabIndex = 27;
-            // 
-            // txtComb2
-            // 
-            this.txtComb2.Location = new System.Drawing.Point(129, 349);
-            this.txtComb2.Name = "txtComb2";
-            this.txtComb2.Size = new System.Drawing.Size(113, 20);
-            this.txtComb2.TabIndex = 28;
-            // 
-            // txtComb3
-            // 
-            this.txtComb3.Location = new System.Drawing.Point(129, 381);
-            this.txtComb3.Name = "txtComb3";
-            this.txtComb3.Size = new System.Drawing.Size(113, 20);
-            this.txtComb3.TabIndex = 29;
-            // 
-            // txtCep
-            // 
-            this.txtCep.Location = new System.Drawing.Point(312, 167);
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(100, 20);
-            this.txtCep.TabIndex = 30;
+            this.label10.Text = "Selecione o Combustível e informe o valor";
             // 
             // label11
             // 
@@ -315,33 +249,6 @@
             this.label11.Size = new System.Drawing.Size(28, 16);
             this.label11.TabIndex = 31;
             this.label11.Text = "CEP";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(88, 318);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "Nome";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(88, 352);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 13);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "Nome";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(88, 384);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(35, 13);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Nome";
             // 
             // label15
             // 
@@ -370,27 +277,104 @@
             this.label17.TabIndex = 37;
             this.label17.Text = "R$";
             // 
+            // txtValor1
+            // 
+            this.txtValor1.Location = new System.Drawing.Point(286, 315);
+            this.txtValor1.Mask = "0.00";
+            this.txtValor1.Name = "txtValor1";
+            this.txtValor1.Size = new System.Drawing.Size(39, 20);
+            this.txtValor1.TabIndex = 38;
+            // 
+            // txtValor2
+            // 
+            this.txtValor2.Location = new System.Drawing.Point(286, 348);
+            this.txtValor2.Mask = "0.00";
+            this.txtValor2.Name = "txtValor2";
+            this.txtValor2.Size = new System.Drawing.Size(39, 20);
+            this.txtValor2.TabIndex = 39;
+            // 
+            // txtValor3
+            // 
+            this.txtValor3.Location = new System.Drawing.Point(286, 381);
+            this.txtValor3.Mask = "0.00";
+            this.txtValor3.Name = "txtValor3";
+            this.txtValor3.Size = new System.Drawing.Size(39, 20);
+            this.txtValor3.TabIndex = 40;
+            // 
+            // txtCnpj
+            // 
+            this.txtCnpj.Location = new System.Drawing.Point(69, 211);
+            this.txtCnpj.Mask = "00000000000000";
+            this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.Size = new System.Drawing.Size(161, 20);
+            this.txtCnpj.TabIndex = 41;
+            // 
+            // txtAlvara
+            // 
+            this.txtAlvara.Location = new System.Drawing.Point(240, 211);
+            this.txtAlvara.Mask = "0000000000";
+            this.txtAlvara.Name = "txtAlvara";
+            this.txtAlvara.Size = new System.Drawing.Size(162, 20);
+            this.txtAlvara.TabIndex = 42;
+            // 
+            // txtCep
+            // 
+            this.txtCep.Location = new System.Drawing.Point(313, 167);
+            this.txtCep.Mask = "00000000";
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(100, 20);
+            this.txtCep.TabIndex = 43;
+            // 
+            // selctComb1
+            // 
+            this.selctComb1.AutoSize = true;
+            this.selctComb1.Location = new System.Drawing.Point(161, 318);
+            this.selctComb1.Name = "selctComb1";
+            this.selctComb1.Size = new System.Drawing.Size(80, 17);
+            this.selctComb1.TabIndex = 44;
+            this.selctComb1.Text = "checkBox1";
+            this.selctComb1.UseVisualStyleBackColor = true;
+            // 
+            // selctComb2
+            // 
+            this.selctComb2.AutoSize = true;
+            this.selctComb2.Location = new System.Drawing.Point(161, 348);
+            this.selctComb2.Name = "selctComb2";
+            this.selctComb2.Size = new System.Drawing.Size(80, 17);
+            this.selctComb2.TabIndex = 45;
+            this.selctComb2.Text = "checkBox2";
+            this.selctComb2.UseVisualStyleBackColor = true;
+            // 
+            // selctComb3
+            // 
+            this.selctComb3.AutoSize = true;
+            this.selctComb3.Location = new System.Drawing.Point(161, 380);
+            this.selctComb3.Name = "selctComb3";
+            this.selctComb3.Size = new System.Drawing.Size(80, 17);
+            this.selctComb3.TabIndex = 46;
+            this.selctComb3.Text = "checkBox3";
+            this.selctComb3.UseVisualStyleBackColor = true;
+            // 
             // CadPosto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(483, 462);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.selctComb3);
+            this.Controls.Add(this.selctComb2);
+            this.Controls.Add(this.selctComb1);
             this.Controls.Add(this.txtCep);
-            this.Controls.Add(this.txtComb3);
-            this.Controls.Add(this.txtComb2);
-            this.Controls.Add(this.txtComb1);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtAlvara);
+            this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.txtValor3);
             this.Controls.Add(this.txtValor2);
             this.Controls.Add(this.txtValor1);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -400,8 +384,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.linkTermo);
             this.Controls.Add(this.checkAcordo);
-            this.Controls.Add(this.txtAlvara);
-            this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtUF);
@@ -415,6 +397,7 @@
             this.Name = "CadPosto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro-Posto";
+            this.Load += new System.EventHandler(this.CadPosto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,8 +414,6 @@
         private System.Windows.Forms.TextBox txtUF;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtBairro;
-        private System.Windows.Forms.TextBox txtCnpj;
-        private System.Windows.Forms.TextBox txtAlvara;
         private System.Windows.Forms.CheckBox checkAcordo;
         private System.Windows.Forms.LinkLabel linkTermo;
         private System.Windows.Forms.Label label4;
@@ -442,20 +423,19 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtValor1;
-        private System.Windows.Forms.TextBox txtValor2;
-        private System.Windows.Forms.TextBox txtValor3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtComb1;
-        private System.Windows.Forms.TextBox txtComb2;
-        private System.Windows.Forms.TextBox txtComb3;
-        private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.MaskedTextBox txtValor1;
+        private System.Windows.Forms.MaskedTextBox txtValor2;
+        private System.Windows.Forms.MaskedTextBox txtValor3;
+        private System.Windows.Forms.MaskedTextBox txtCnpj;
+        private System.Windows.Forms.MaskedTextBox txtAlvara;
+        private System.Windows.Forms.MaskedTextBox txtCep;
+        private System.Windows.Forms.CheckBox selctComb1;
+        private System.Windows.Forms.CheckBox selctComb2;
+        private System.Windows.Forms.CheckBox selctComb3;
     }
 }

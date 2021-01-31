@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,37 +11,72 @@ namespace Ifuel
     class Login
     {
         /*String para conectar no Banco*/
-        string connectionString = @"server=localhost;user id=root;persistsecurityinfo=True;database=ifuel";
+        MySqlConnection conectar;
+        string connectionString = @"Server=localhost;Port=3306;Database=ifuel;Uid=Dev;Pwd=Dev@9138;";
 
         /*Para confirmar login*/
         public bool Logar = false;
         int ConfLogin = 0;
 
-        public void getLoginPosto(string Cnpj, string Senha) 
+        /*Outras variaveis*/
+        public string message = null;
+        /***************/
+        public void getLoginPosto(string User, string Senha) 
         {
-           
             try
             {
-
-                string sql = "(SELECT (LOGIN_USR) FROM POSTOSISTEMA WHERE  LOGIN_USR = @Cnpj  AND  SENHA_USR = @Senha  )";
-                MySqlConnection conectar = new MySqlConnection(connectionString);
-
-                MySqlCommand cmd = new MySqlCommand(sql, conectar);
-                cmd.Parameters.Add("@Cnpj", MySqlDbType.VarChar).Value = Cnpj;
-                cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = Senha;
-
+                /*Comandos de Conexão e banco*/
+                MySqlCommand Command = new MySqlCommand();
+                conectar = new MySqlConnection(connectionString);
                 conectar.Open();
-
-                ConfLogin = (int)cmd.ExecuteScalar();
-
-                if (ConfLogin > 0)
+                try
                 {
-                    Logar = true;
+                    /*Comandos e conexões*/
+                    Command.Connection = conectar;
+                    Command.CommandType = CommandType.Text;
+                    if (!string.IsNullOrEmpty(User) || !string.IsNullOrEmpty(Senha))
+                    {
+                        Command.CommandText = "SELECT ID_USR FROM POSTOSISTEMA WHERE  LOGIN_USR = '" + User + "'  AND  SENHA_USR = '" + Senha + "'";
+
+                        ConfLogin = (int)Command.ExecuteScalar();
+
+                        if (ConfLogin > 0)
+                        {
+                            Logar = true;
+                        }
+                        else
+                        {
+                            Logar = false;
+                        }
+                    }
+                    else
+                    {
+                        Logar = false;
+                    }
+                    conectar.Close();
                 }
-                else
+                /*Trata erros do Banco*/
+                catch (MySqlException erro)
                 {
-                    Logar = false;
+                    StringBuilder str = new StringBuilder();
+                    str.AppendLine(erro.Message);
+                    str.Append(erro.SqlState);
+                    str.AppendLine("\n");
+                    str.AppendLine(erro.StackTrace);
+                    message = str.ToString();
                 }
+
+                /*Trata erro do Programa*/
+                catch (IfuelException erro)
+                {
+                    StringBuilder str = new StringBuilder();
+                    str.AppendLine(erro.Message);
+                    str.AppendLine("\n");
+                    str.AppendLine(erro.StackTrace);
+                    str.ToString();
+                    message = str.ToString();
+                }
+
             }
             /*Trata erros do Banco*/
             catch (MySqlException erro)
@@ -50,44 +86,66 @@ namespace Ifuel
                 str.Append(erro.SqlState);
                 str.AppendLine("\n");
                 str.AppendLine(erro.StackTrace);
-            }
-
-            /*Trata erro do Programa*/
-            catch (IfuelException erro)
-            {
-                StringBuilder str = new StringBuilder();
-                str.AppendLine(erro.Message);
-                str.AppendLine("\n");
-                str.AppendLine(erro.StackTrace);
-                str.ToString();
+                message = str.ToString();
             }
         }
 
         public void getLoginUser(string Email, string Senha)
         {
-
             try
             {
-
-                string sql = "(SELECT (LOGIN_USR) FROM POSTOSISTEMA WHERE  LOGIN_USR = @Email  AND  SENHA_USR = @Senha  )";
-                MySqlConnection conectar = new MySqlConnection(connectionString);
-
-                MySqlCommand cmd = new MySqlCommand(sql, conectar);
-                cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = Email;
-                cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = Senha;
-
+                /*Comandos de Conexão e banco*/
+                MySqlCommand Command = new MySqlCommand();
+                conectar = new MySqlConnection(connectionString);
                 conectar.Open();
-
-                ConfLogin = (int)cmd.ExecuteScalar();
-
-                if (ConfLogin > 0)
+                try
                 {
-                    Logar = true;
+                    /*Comandos e conexões*/
+                    Command.Connection = conectar;
+                    Command.CommandType = CommandType.Text;
+                    if (!string.IsNullOrEmpty(Email) || !string.IsNullOrEmpty(Senha))
+                    {
+                        Command.CommandText = "SELECT ID_USR FROM USERSISTEMA WHERE  LOGIN_USR = '" + Email+ "'  AND  SENHA_USR = '" +Senha+ "'";
+
+                        ConfLogin = (int)Command.ExecuteScalar();
+
+                        if (ConfLogin > 0)
+                        {
+                            Logar = true;
+                        }
+                        else
+                        {
+                            Logar = false;
+                        }
+                    }
+                    else
+                    {
+                        Logar = false;
+                    }
+                    conectar.Close();
                 }
-                else
+                /*Trata erros do Banco*/
+                catch (MySqlException erro)
                 {
-                    Logar = false;
+                    StringBuilder str = new StringBuilder();
+                    str.AppendLine(erro.Message);
+                    str.Append(erro.SqlState);
+                    str.AppendLine("\n");
+                    str.AppendLine(erro.StackTrace);
+                    message = str.ToString();
                 }
+
+                /*Trata erro do Programa*/
+                catch (IfuelException erro)
+                {
+                    StringBuilder str = new StringBuilder();
+                    str.AppendLine(erro.Message);
+                    str.AppendLine("\n");
+                    str.AppendLine(erro.StackTrace);
+                    str.ToString();
+                    message = str.ToString();
+                }
+
             }
             /*Trata erros do Banco*/
             catch (MySqlException erro)
@@ -97,17 +155,9 @@ namespace Ifuel
                 str.Append(erro.SqlState);
                 str.AppendLine("\n");
                 str.AppendLine(erro.StackTrace);
+                message = str.ToString();
             }
 
-            /*Trata erro do Programa*/
-            catch (IfuelException erro)
-            {
-                StringBuilder str = new StringBuilder();
-                str.AppendLine(erro.Message);
-                str.AppendLine("\n");
-                str.AppendLine(erro.StackTrace);
-                str.ToString();
-            }
         }
 
     }

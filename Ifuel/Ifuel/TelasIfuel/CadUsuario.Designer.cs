@@ -33,7 +33,6 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.cadUser = new System.Windows.Forms.Label();
             this.textNome = new System.Windows.Forms.TextBox();
-            this.textCPF = new System.Windows.Forms.TextBox();
             this.textEmail = new System.Windows.Forms.TextBox();
             this.textConfEmail = new System.Windows.Forms.TextBox();
             this.textSenha = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.textCPF = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -89,15 +89,6 @@
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(176, 20);
             this.textNome.TabIndex = 3;
-            this.textNome.Text = "Nome";
-            // 
-            // textCPF
-            // 
-            this.textCPF.Location = new System.Drawing.Point(237, 90);
-            this.textCPF.Name = "textCPF";
-            this.textCPF.Size = new System.Drawing.Size(176, 20);
-            this.textCPF.TabIndex = 4;
-            this.textCPF.Text = "CPF";
             // 
             // textEmail
             // 
@@ -105,7 +96,6 @@
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(176, 20);
             this.textEmail.TabIndex = 5;
-            this.textEmail.Text = "Email";
             // 
             // textConfEmail
             // 
@@ -113,23 +103,22 @@
             this.textConfEmail.Name = "textConfEmail";
             this.textConfEmail.Size = new System.Drawing.Size(176, 20);
             this.textConfEmail.TabIndex = 6;
-            this.textConfEmail.Text = "Confirmar Email";
             // 
             // textSenha
             // 
             this.textSenha.Location = new System.Drawing.Point(27, 243);
             this.textSenha.Name = "textSenha";
+            this.textSenha.PasswordChar = '*';
             this.textSenha.Size = new System.Drawing.Size(176, 20);
             this.textSenha.TabIndex = 7;
-            this.textSenha.Text = "Senha";
             // 
             // textConfSenha
             // 
             this.textConfSenha.Location = new System.Drawing.Point(237, 243);
             this.textConfSenha.Name = "textConfSenha";
+            this.textConfSenha.PasswordChar = '*';
             this.textConfSenha.Size = new System.Drawing.Size(176, 20);
             this.textConfSenha.TabIndex = 8;
-            this.textConfSenha.Text = "Confirmar Senha";
             // 
             // textCidade
             // 
@@ -137,7 +126,6 @@
             this.textCidade.Name = "textCidade";
             this.textCidade.Size = new System.Drawing.Size(176, 20);
             this.textCidade.TabIndex = 9;
-            this.textCidade.Text = "Cidade";
             // 
             // textBairro
             // 
@@ -145,7 +133,6 @@
             this.textBairro.Name = "textBairro";
             this.textBairro.Size = new System.Drawing.Size(176, 20);
             this.textBairro.TabIndex = 10;
-            this.textBairro.Text = "Bairro";
             // 
             // label1
             // 
@@ -237,11 +224,20 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Para realizar cadastro prencha os dados solicitados";
             // 
+            // textCPF
+            // 
+            this.textCPF.Location = new System.Drawing.Point(237, 90);
+            this.textCPF.Mask = "000.000.000-00";
+            this.textCPF.Name = "textCPF";
+            this.textCPF.Size = new System.Drawing.Size(176, 20);
+            this.textCPF.TabIndex = 20;
+            // 
             // CadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 341);
+            this.Controls.Add(this.textCPF);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -257,7 +253,6 @@
             this.Controls.Add(this.textSenha);
             this.Controls.Add(this.textConfEmail);
             this.Controls.Add(this.textEmail);
-            this.Controls.Add(this.textCPF);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.cadUser);
             this.Controls.Add(this.btnSalvar);
@@ -277,7 +272,6 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label cadUser;
         private System.Windows.Forms.TextBox textNome;
-        private System.Windows.Forms.TextBox textCPF;
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.TextBox textConfEmail;
         private System.Windows.Forms.TextBox textSenha;
@@ -293,5 +287,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.MaskedTextBox textCPF;
     }
 }

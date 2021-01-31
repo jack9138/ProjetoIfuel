@@ -20,13 +20,20 @@ namespace Ifuel
             InitializeComponent();
         }
 
+        private void CadPosto_Load(object sender, EventArgs e)
+        {
+            selctComb1.Text = "Gasolina";
+            selctComb2.Text = "Etanol";
+            selctComb3.Text = "Diesel";
+        }
         /*Link para o termo de uso*/
         private void linkTermo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string mensage = ("Termo de acordo\n "
                             + "Ao utilizar o IFUEL, concordo que meus dados serão utilizados para pesquisas e avaliações dos cliente.\n"
                             + "Afirmo que como Posto, sera de total responsabilidade minha realizar a manutenção do valor referente aos combustíveis.\n"
-                            + "Da parte do software fica afirmado a manutenção e prevenções em relação a futuros problemas. ");
+                            + "Da parte do software fica afirmado a manutenção e prevenções em relação a futuros problemas.\n" 
+                            + "Para realizar login, utilizar os 5 primeiros digitos do CNPJ como usuário e senha.");
 
             MessageBox.Show(mensage);
         }
@@ -36,19 +43,19 @@ namespace Ifuel
         {
             try
             {
-                string NomePosto = txtNomePosto.Text;
-                string Cnpj = txtCnpj.Text;
-                string Alvara = txtAlvara.Text;
+                string NomePosto = txtNomePosto.Text.ToString();
+                string Cnpj = txtCnpj.Text.ToString();
+                string Alvara = txtAlvara.Text.ToString();
                 string Estado = txtUF.Text;
                 string Cidade = txtCidade.Text;
                 string Bairro = txtBairro.Text;
-                string Cep = txtCep.Text;
+                int Cep = int.Parse(txtCep.Text);
                 string Endereco = txtEndereco.Text;
-                string NomeComb1 = txtComb1.Text;
+                string NomeComb1 = selctComb1.Text;
                 double ValorComb1 = double.Parse(txtValor1.Text);
-                string NomeComb2 = txtComb2.Text;
+                string NomeComb2 = selctComb2.Text;
                 double ValorComb2 = double.Parse(txtValor2.Text);
-                string NomeComb3 = txtComb3.Text;
+                string NomeComb3 = selctComb3.Text;
                 double ValorComb3 = double.Parse(txtValor3.Text);
                 bool CheckTermo = checkAcordo.Checked;
 
@@ -59,13 +66,17 @@ namespace Ifuel
 
                 bool cadastroOk = cadastroP.Cadastrar;
 
-                if (cadastroOk)
+                if (cadastroOk == true)
                 {
                     MessageBox.Show("Cadastro realizado com sucesso !");
                 }
-                else
+                else if(cadastroOk == false)
                 {
                     MessageBox.Show("Erro ao cadastrar!");
+                }
+                else
+                {
+                    MessageBox.Show(cadastroP.messageErro +"\nEntre em contato com o Administrador");
                 }
             }
             /*Trata erros do Banco*/
@@ -98,5 +109,7 @@ namespace Ifuel
             Hide();
 
         }
+
+       
     }
 }

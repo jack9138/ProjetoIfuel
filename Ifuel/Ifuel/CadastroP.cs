@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,8 @@ namespace Ifuel
     {
         /*String para conectar no Banco*/
         MySqlConnection conectar;
-        string connectionString = @"Server=127.0.0.1;UserId=root;Password=Dev@9138;Database=IFUEL";
-        //@"Server=127.0.0.1;UserId=root;Password=Dev@9138;Database=IFUEL"
+       string connectionString = @"Server=localhost;Port=3306;Database=ifuel;Uid=Dev;Pwd=Dev@9138;";
+
 
         /************/
         #region Declaração de variaveis
@@ -26,7 +27,7 @@ namespace Ifuel
         public string Estado = null;
         string Cidade = null;
         string Bairro = null;
-        string Cep = null;
+        int Cep = 0;
         string Endereco = null;
         /*******************/
 
@@ -34,8 +35,8 @@ namespace Ifuel
         public string NomeComb1 = null;//Recebe os dados do Form
         public string NomeComb2 = null;
         public string NomeComb3 = null;
-        public double  ValorComb1 = 0.0;//Recebe os dados de valor do Form
-        public double  ValorComb2 = 0.0;//Recebe os dados de valor do Form
+        public double ValorComb1 = 0.0;//Recebe os dados de valor do Form
+        public double ValorComb2 = 0.0;//Recebe os dados de valor do Form
         public double ValorComb3 = 0.0;//Recebe os dados de valor do Form
         /*********************/
 
@@ -45,13 +46,14 @@ namespace Ifuel
         public int ID_Comb1 = 0;//Recebe os ID's da tabela=Combustivel
         public int ID_Comb2 = 0;
         public int ID_Comb3 = 0;
-        private int ID_Posto = 0;
         public string messageErro = null;
+        private string Senha = null;
+        private string User = null;
         /*************************/
 
         #endregion
         #region Contrutor
-        public CadastroP(string NomePosto, string Cnpj, string Alvara, string Estado, string Cidade, string Bairro, string Cep, string Endereco, string NomeComb1, string NomeComb2, string NomeComb3, double ValorComb1,double ValorComb2, double ValorComb3, bool  Termo)
+        public CadastroP(string NomePosto, string Cnpj, string Alvara, string Estado, string Cidade, string Bairro, int Cep, string Endereco, string NomeComb1, string NomeComb2, string NomeComb3, double ValorComb1,double ValorComb2, double ValorComb3, bool  Termo)
         {
 
             this.NomePosto = NomePosto;
@@ -78,83 +80,69 @@ namespace Ifuel
             
             try
             {
-                 conectar = new MySqlConnection(connectionString);
+                /*Comandos de Conexão e banco*/
+                MySqlCommand Command = new MySqlCommand();
+                conectar = new MySqlConnection(connectionString);
+                conectar.Open();
 
-                if (!string.IsNullOrEmpty(NomePosto) || !string.IsNullOrEmpty(Cnpj) || !string.IsNullOrEmpty(Alvara) || !string.IsNullOrEmpty(Estado) || !string.IsNullOrEmpty(Cidade) || !string.IsNullOrEmpty(Bairro) || !string.IsNullOrEmpty(Cep) || !string.IsNullOrEmpty(Endereco) || !Termo)
+                if (!string.IsNullOrEmpty(NomePosto) || !string.IsNullOrEmpty(Cnpj) || !string.IsNullOrEmpty(Alvara) || !string.IsNullOrEmpty(Estado) || !string.IsNullOrEmpty(Cidade) || !string.IsNullOrEmpty(Bairro) || Cep == 0 || !string.IsNullOrEmpty(Endereco) || !Termo)
                 {
                     //Se cadastrar igual falso, tenta cadastrar. Se for verdadeiro não tenta cadastrar
                     try
                     {
+                        /*Comandos e conexões*/
+                        Command.Connection = conectar;
+                        Command.CommandType = CommandType.Text;
+
+
+                        #region Selects para pegar o ID do combustivel
+                        /*Selects para pegar os nomes dos combustiveis e salvar na tabela do POSTO.*/
+                        Command.CommandText = "SELECT COD_COMB FROM COMBUSTIVEL WHERE NOME_COMB = '" + NomeComb1 + "'";
+                        int comb1 = (int)Command.ExecuteScalar();
+
+                        Command.CommandText = "SELECT COD_COMB FROM COMBUSTIVEL WHERE NOME_COMB = '" + NomeComb2 + "'";
+                        int comb2 = (int)Command.ExecuteScalar();
+                        //int comb2 = int.Parse(Command.ExecuteReader());
+                        Command.CommandText = "SELECT COD_COMB FROM COMBUSTIVEL WHERE NOME_COMB = '" + NomeComb3 + "'";
+                        int comb3 = (int)Command.ExecuteScalar();
+                        #endregion
+
+
+
+
                         #region Inserir dados na Tabela Posto
                         /*String para inserir cadastro na tabela POSTO*/
-                        string sqlCadastro = "(INSERT INTO POSTO (NOME_POSTO,CNPJ_POSTO,UF_POSTO,CIDADE_POSTO,RUA_POSTO,BAIRRO_POSTO,CEP_POSTO)" +  //,COMBUSTIVEL1_POSTO,COMBUSTIVEL2_POSTO,COMBUSTIVEL3_POSTO
-                                            "VALUES (@NomePosto, @Cnpj, @ESTADO,@Cidade,@Endereco,@Bairro,@Cep) )"; //,@Comb1,@Comb2,@Comb3
-                        MySqlCommand insertCad = new MySqlCommand(sqlCadastro, conectar);//Comando para inserir cadastro
-                        insertCad.Parameters.Add("@NomePosto", MySqlDbType.VarChar).Value = NomePosto;
-                        insertCad.Parameters.Add("@Cpnj", MySqlDbType.VarChar).Value = Cnpj;
-                        insertCad.Parameters.Add("@Estado", MySqlDbType.VarChar).Value = Estado;
-                        insertCad.Parameters.Add("@Cidade", MySqlDbType.VarChar).Value = Cidade;
-                        insertCad.Parameters.Add("@Bairro", MySqlDbType.VarChar).Value = Bairro;
-                        insertCad.Parameters.Add("@Cep", MySqlDbType.VarChar).Value = Cep;
-                        #endregion 
-
-                        #region Selects de dados
-                        /*Select para pegar os nomes dos combustiveis e salvar na tabela do POSTO.*/
-                        //Verificar erro que ocorre nessa parte->Talvez trocar e colocar a parte de select com uma lista. 
-                        string selectComb1 = "(SELECT ID_COMB FROM COMBUSTIVEL WHERE NOME_COMB = " + NomeComb1 + ")";
-                        ID_Comb1 = int.Parse(selectComb1);
-                        insertCad.Parameters.Add("@Comb1", MySqlDbType.Int64).Value = ID_Comb1;
-
-
-                        string selectComb2 = "(SELECT ID_COMB FROM COMBUSTIVEL WHERE NOME_COMB = " + NomeComb2 + ")";
-                        ID_Comb2 = int.Parse(selectComb2);
-                        insertCad.Parameters.Add("@Comb2", MySqlDbType.Int64).Value = ID_Comb2;
-
-
-                        string selectComb3 = "(SELECT ID_COMB FROM COMBUSTIVEL WHERE NOME_COMB = " + NomeComb3 + ")";
-                        ID_Comb3 = int.Parse(selectComb3);
-                        insertCad.Parameters.Add("@Comb3", MySqlDbType.Int64).Value = ID_Comb3;
-
-
-                        /*Select para buscar o ID do POSTO */
-                        string sqlSelectId = "(SELECT LAST_INSTER_ID() FROM POSTO)";
-                        MySqlCommand comandSelect = new MySqlCommand(sqlSelectId, conectar);
-                        ID_Posto = Convert.ToInt32(comandSelect);
+                        Command.CommandText = "INSERT INTO POSTO VALUES (0,'"+NomePosto+"', '"+Cnpj+"', '"+Estado+"','"+Cidade+"','"+Endereco+"','"+Bairro+"','"+Cep+ "','" + comb1+ "','" + comb2 + "','" + comb3 + "','"+Alvara+"')";
+                        Command.ExecuteNonQuery();
                         #endregion
 
                         #region Inserir dados na Tabela POSTOSISTEMA
+                        /*Select para buscar o ID do POSTO */
+                        Command.CommandText = "SELECT MAX(ID_POSTO) FROM POSTO";
+                        int ID_Posto = (int)Command.ExecuteScalar();
+
                         /*String para inserir na Tabela POSTOSISTEMA -> OBS:Usuário e senha do Posto é  CNPJ dele*/
-                        string sqlLogin = "( INSERT INTO POSTOSISTEMA(ID_USR, LOGIN_USR, SENHA_USR)" +
-                                              "VALUES(@ID_Posto,@Cnpj,@Cnpj) ";
-                        MySqlCommand insertLogin = new MySqlCommand(sqlLogin, conectar);
-                        insertLogin.Parameters.Add("@ID_POSTO", MySqlDbType.Int64).Value = ID_Posto;
-                        insertLogin.Parameters.Add("@Cnpj", MySqlDbType.VarChar).Value = Cnpj;
-                        insertLogin.Parameters.Add("@Cnpj", MySqlDbType.VarChar).Value = Cnpj;
+                        Senha = Cnpj.Substring(0,5); //Realiza o corte na strign para salvar apenas os 5 primeiros numeros como senha
+                        User = Cnpj.Substring(0, 5); //Realiza o corte na strign para salvar apenas os 5 primeiros numeros como Usuário
+                        Command.CommandText = "INSERT INTO POSTOSISTEMA VALUES('"+User+"','"+Senha+ "','" + ID_Posto + "') ";
+                        Command.ExecuteNonQuery();
                         #endregion
 
                         #region Inserir dados na tabela Valor
-                        /*String para inserir na tabela Valor*/
-                        string sqlValor = "( INSERT INTO VALOR(ID_POSTO, NOME_COMB, DATA_VALOR, COMB_VALOR)" +
-                                              "VALUES(@ID_Posto,@CodComb,@Data_Cad,@ValorComb) ";
-                        MySqlCommand insertValor1 = new MySqlCommand(sqlValor, conectar);
-                        insertValor1.Parameters.Add("@ID_Posto", MySqlDbType.Int64).Value = ID_Posto;
-                        insertValor1.Parameters.Add("@CodComb", MySqlDbType.Int64).Value = ID_Comb1;
-                        insertValor1.Parameters.Add("@ValorComb", MySqlDbType.Decimal).Value = ValorComb1;
+                        /*Pega a data local para inserir na tabela*/
+                        DateTime Data = DateTime.Now;
 
+                        /*Comandos para inserir na tabela Valor*/
+                        /*Como os valores da coluna no banco é DECIMAL. É feito a mutiplicação por 10, para mostar o valor é feito a divisão de 10*/
+                        Command.CommandText = "INSERT INTO VALOR VALUES(0,'"+ID_Posto + "','"+comb1+ "','" + Data.ToString("yyyy-MM-dd H:mm:ss") + "','" + (ValorComb1*10)+ "')";
+                        Command.ExecuteNonQuery();
 
-                        MySqlCommand insertValor2 = new MySqlCommand(sqlValor, conectar);
-                        insertValor2.Parameters.Add("@ID_Posto", MySqlDbType.Int64).Value = ID_Posto;
-                        insertValor2.Parameters.Add("@CodComb", MySqlDbType.Int64).Value = ID_Comb2;
-                        insertValor2.Parameters.Add("@ValorComb", MySqlDbType.Decimal).Value = ValorComb2;
+                        Command.CommandText = "INSERT INTO VALOR VALUES(0,'" +ID_Posto + "','" +comb2 + "','" + Data.ToString("yyyy-MM-dd H:mm:ss") + "','" +(ValorComb2*10)+ "')";
+                        Command.ExecuteNonQuery();
 
-                        MySqlCommand insertValor3 = new MySqlCommand(sqlValor, conectar);
-                        insertValor3.Parameters.Add("@ID_Posto", MySqlDbType.Int64).Value = ID_Posto;
-                        insertValor3.Parameters.Add("@CodComb", MySqlDbType.Int64).Value = ID_Comb3;
-                        insertValor3.Parameters.Add("@ValorComb", MySqlDbType.Decimal).Value = ValorComb3;
-
+                        Command.CommandText = "INSERT INTO VALOR VALUES(0,'" +ID_Posto + "','" +comb3+ "','" + Data.ToString("yyyy-MM-dd H:mm:ss") + "','" +(ValorComb3*10)+ "')";
+                        Command.ExecuteNonQuery();
                         #endregion
-
-
 
                         Cadastrar = true;
                         conectar.Close();
@@ -167,6 +155,7 @@ namespace Ifuel
                         str.AppendLine("\n");
                         str.AppendLine(erro.StackTrace);
                         messageErro = str.ToString();
+                        conectar.Close();//Fecha a conexão
                     }
                  
                 }

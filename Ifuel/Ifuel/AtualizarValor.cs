@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,17 @@ namespace Ifuel
 {
     class AtualizarValor
     {
-        //Criar variaveis, construtores e métodos para atualizar valores
+        /*String para conectar no Banco*/
+        MySqlConnection conectar;
+        string connectionString = @"Server=localhost;Port=3306;Database=ifuel;Uid=Dev;Pwd=Dev@9138;";
+
+        #region Variaveis
+        #endregion
+
+        #region Construtor
+        #endregion
+
+        #region Métodos
+        #endregion
     }
 }

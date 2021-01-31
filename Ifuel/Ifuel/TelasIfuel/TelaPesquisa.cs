@@ -17,24 +17,6 @@ namespace Ifuel
             InitializeComponent();
         }
 
-        /*Caixa que seleciona Cidade*/
-        private void selecCidade_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Utilizar como base, banco de dados de endereço do Posto
-        }
-
-        /*Caixa de seleção do Bairro, precisa mostrar os bairros das Cidades*/
-        private void selecBairro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Utilizar como base, banco de dados de endereço do Posto
-        }
-
-        /*Caixa de seleção do Combstivel, precisa mostrar opções de combustíveis*/
-        private void selecComb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Criar método para selecionar combustíveis
-        }
-
         /*Volta para tela de Menu do Usuário*/
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -46,8 +28,12 @@ namespace Ifuel
         /*Botão para pesquisar valores*/
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            //Precisar colocar os metodos de pesquisas e tratamento de exceções. 
-            //Ao final da pesquisa, mrostar um MESSAGEBOX com os resultados.
+            string cidade = txtCidade.Text;
+            string bairro = txtBairro.Text;
+            string comb = txtComb.Text;
+
+            PesquisarValor pesq = new PesquisarValor(cidade,bairro,comb);
+            pesq.getValor();//Precisa criar outra tela para mostrar os resultados. 
         }
     }
 }

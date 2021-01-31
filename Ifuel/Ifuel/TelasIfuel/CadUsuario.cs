@@ -71,7 +71,7 @@ namespace Ifuel
                     }
                     else
                     {
-                        MessageBox.Show(cadastro.messageErro);
+                        MessageBox.Show(cadastro.messageErro + "\nEntre em contato com o Administrador");
                     }
                 }
                 /*Trata erros do Banco*/
