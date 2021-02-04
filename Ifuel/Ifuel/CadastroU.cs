@@ -119,6 +119,12 @@ namespace Ifuel
             }
         }
        
+
+        public void updateCadastro()
+        {
+            //Parametros para atualizar o cadastro
+        }
+
         #endregion
     }
 }

@@ -16,7 +16,7 @@ namespace Ifuel
 
         /*Para confirmar login*/
         public bool Logar = false;
-        int ConfLogin = 0;
+        public int ConfLogin = 0;
 
         /*Outras variaveis*/
         public string message = null;

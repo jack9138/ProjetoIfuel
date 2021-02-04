@@ -56,12 +56,12 @@ namespace Ifuel
         public CadastroP(string NomePosto, string Cnpj, string Alvara, string Estado, string Cidade, string Bairro, int Cep, string Endereco, string NomeComb1, string NomeComb2, string NomeComb3, double ValorComb1,double ValorComb2, double ValorComb3, bool  Termo)
         {
 
-            this.NomePosto = NomePosto;
+            this.NomePosto = NomePosto.ToUpper();
             this.Cnpj = Cnpj;
             this.Alvara = Alvara;
-            this.Estado = Estado;
-            this.Cidade = Cidade;
-            this.Bairro = Bairro;
+            this.Estado = Estado.ToUpper();
+            this.Cidade = Cidade.ToUpper();
+            this.Bairro = Bairro.ToUpper();
             this.Cep = Cep;
             this.Endereco = Endereco;
             this.NomeComb1 = NomeComb1;
@@ -188,6 +188,12 @@ namespace Ifuel
             }
 
            
+        }
+
+
+        public void updatePCadastro()
+        {
+            //Colocar coisas para atualzar o cadastro do posto
         }
         #endregion
     }

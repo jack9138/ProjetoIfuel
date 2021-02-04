@@ -37,7 +37,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
-            this.txtComb = new System.Windows.Forms.TextBox();
+            this.selectComb1 = new System.Windows.Forms.CheckBox();
+            this.selectComb2 = new System.Windows.Forms.CheckBox();
+            this.selectComb3 = new System.Windows.Forms.CheckBox();
+            this.txtMResult = new System.Windows.Forms.RichTextBox();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.vRolagemP = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -98,11 +103,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(163, 190);
+            this.label4.Location = new System.Drawing.Point(150, 192);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 17);
+            this.label4.Size = new System.Drawing.Size(159, 17);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Digite o Combustível";
+            this.label4.Text = "Selecione o Combustível";
             // 
             // txtCidade
             // 
@@ -118,12 +123,60 @@
             this.txtBairro.Size = new System.Drawing.Size(156, 20);
             this.txtBairro.TabIndex = 9;
             // 
-            // txtComb
+            // selectComb1
             // 
-            this.txtComb.Location = new System.Drawing.Point(153, 216);
-            this.txtComb.Name = "txtComb";
-            this.txtComb.Size = new System.Drawing.Size(156, 20);
-            this.txtComb.TabIndex = 10;
+            this.selectComb1.AutoSize = true;
+            this.selectComb1.Location = new System.Drawing.Point(106, 224);
+            this.selectComb1.Name = "selectComb1";
+            this.selectComb1.Size = new System.Drawing.Size(15, 14);
+            this.selectComb1.TabIndex = 10;
+            this.selectComb1.UseVisualStyleBackColor = true;
+            // 
+            // selectComb2
+            // 
+            this.selectComb2.AutoSize = true;
+            this.selectComb2.Location = new System.Drawing.Point(192, 224);
+            this.selectComb2.Name = "selectComb2";
+            this.selectComb2.Size = new System.Drawing.Size(15, 14);
+            this.selectComb2.TabIndex = 11;
+            this.selectComb2.UseVisualStyleBackColor = true;
+            // 
+            // selectComb3
+            // 
+            this.selectComb3.AutoSize = true;
+            this.selectComb3.Location = new System.Drawing.Point(278, 224);
+            this.selectComb3.Name = "selectComb3";
+            this.selectComb3.Size = new System.Drawing.Size(15, 14);
+            this.selectComb3.TabIndex = 12;
+            this.selectComb3.UseVisualStyleBackColor = true;
+            // 
+            // txtMResult
+            // 
+            this.txtMResult.Location = new System.Drawing.Point(91, 4);
+            this.txtMResult.Name = "txtMResult";
+            this.txtMResult.Size = new System.Drawing.Size(303, 260);
+            this.txtMResult.TabIndex = 13;
+            this.txtMResult.Text = "";
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFechar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnFechar.Location = new System.Drawing.Point(369, 8);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(25, 23);
+            this.btnFechar.TabIndex = 15;
+            this.btnFechar.Text = "X";
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // vRolagemP
+            // 
+            this.vRolagemP.Location = new System.Drawing.Point(369, 49);
+            this.vRolagemP.Name = "vRolagemP";
+            this.vRolagemP.Size = new System.Drawing.Size(21, 204);
+            this.vRolagemP.TabIndex = 14;
             // 
             // TelaPesquisa
             // 
@@ -131,7 +184,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(494, 311);
-            this.Controls.Add(this.txtComb);
+            this.Controls.Add(this.btnFechar);
+            this.Controls.Add(this.vRolagemP);
+            this.Controls.Add(this.txtMResult);
+            this.Controls.Add(this.selectComb3);
+            this.Controls.Add(this.selectComb2);
+            this.Controls.Add(this.selectComb1);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.label4);
@@ -144,6 +202,7 @@
             this.Name = "TelaPesquisa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisar Valor";
+            this.Load += new System.EventHandler(this.TelaPesquisa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +218,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtBairro;
-        private System.Windows.Forms.TextBox txtComb;
+        private System.Windows.Forms.CheckBox selectComb1;
+        private System.Windows.Forms.CheckBox selectComb2;
+        private System.Windows.Forms.CheckBox selectComb3;
+        private System.Windows.Forms.RichTextBox txtMResult;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.VScrollBar vRolagemP;
     }
 }

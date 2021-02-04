@@ -82,8 +82,11 @@ namespace Ifuel
 
         private void linkPerdaSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Ver melhor opção para tela de troca de senha
-            //Talvez criar tela para cadastrar nova senha ou só mostrar a senha. 
+            int logar = 2;
+            TelaAtuSenha atuSenha = new TelaAtuSenha();
+            atuSenha.Logar = logar;
+            atuSenha.Show();
+            Hide();
         }
     }
 }

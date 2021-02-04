@@ -12,6 +12,7 @@ namespace Ifuel
 {
     public partial class MenuPosto : Form
     {
+        public int Id_posto = 0; 
         public MenuPosto()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace Ifuel
         {
             AtuPreco atualiza = new AtuPreco();
             atualiza.Show();
+            atualiza.ID_posto = Id_posto;
             Hide();
         }
 
@@ -31,6 +33,7 @@ namespace Ifuel
             //Criar metódo para mostrar avaliações na tela de Avaliações
             TelaVerAvalia telaAvali = new TelaVerAvalia();
             telaAvali.Show();
+            telaAvali.Id_posto = Id_posto;
             Hide();
         }
 
@@ -47,7 +50,9 @@ namespace Ifuel
         /*Botão para sair(Fecha programa)*/
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            TelaInicial tela = new TelaInicial();
+            tela.Show();
+            Hide();
         }
     }
 }

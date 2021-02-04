@@ -28,7 +28,7 @@ namespace Ifuel
         /*Botão para salvar avaliação*/
         private void btnAvaliar_Click(object sender, EventArgs e)
         {
-            int nota = int.Parse(textNota.Text);
+            string nota = textNota.Text;
             string coment = txtComent.Text;
             string nomePosto = txtNomePosto.Text;
             DateTime date = new DateTime();
@@ -38,6 +38,22 @@ namespace Ifuel
             {
                 Avaliacao av = new Avaliacao(coment,nomePosto,nota,date.ToLocalTime());
                 av.setAvaliacao();
+
+                if (av.Avaliou == true)
+                {
+                    MessageBox.Show("Sua avaliação foi salva com sucesso !\nObrigada por avaliar.");
+                    txtComent.Clear();
+                    txtNomePosto.Clear();
+                    textNota.Clear();
+                }
+                else if (av.Avaliou == false)
+                {
+                    MessageBox.Show("Ocorreu um erro na hora de avaliar" + av.messageErro);
+                }
+                else
+                {
+                    MessageBox.Show(av.messageErro + "\nEntre em contato com o Administrador do Software");
+                }
             }
             /*Trata erro do Programa*/
             catch (IfuelException erro)

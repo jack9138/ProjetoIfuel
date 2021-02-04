@@ -17,6 +17,8 @@ namespace Ifuel
     public partial class LoginPosto : Form
     {
         Login loginP = new Login();
+        TelaVerAvalia av = new TelaVerAvalia();
+        public int ID_POSTO; 
         public LoginPosto()
         {
             InitializeComponent();
@@ -33,10 +35,13 @@ namespace Ifuel
                 Senha = textSenha.Text;
                 loginP.getLoginPosto(User, Senha);
 
+                ID_POSTO = loginP.ConfLogin;//Varivel utilizada na tela de Atualizar preço; 
+                av.Id_posto = ID_POSTO;
                 if (loginP.Logar == true)
                 {
                     MenuPosto menuPosto = new MenuPosto();
                     menuPosto.Show();
+                    menuPosto.Id_posto = ID_POSTO;
                     Hide();
                 }
                 else if (loginP.Logar == false)
@@ -90,10 +95,11 @@ namespace Ifuel
 
         private void linkPerdaSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Ver melhor opção para tela de troca de senha
+            int logar = 1;
+            TelaAtuSenha atuSenha = new TelaAtuSenha();
+            atuSenha.Logar = logar;
+            atuSenha.Show();
+            Hide();
         }
-
-
-
     }
 }

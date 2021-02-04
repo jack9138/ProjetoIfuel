@@ -45,7 +45,9 @@ namespace Ifuel
         /*Botão para sair(Fechar Programa)*/
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            TelaInicial tela = new TelaInicial();
+            tela.Show();
+            Hide();
         }
     }
 }

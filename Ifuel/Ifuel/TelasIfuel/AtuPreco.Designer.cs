@@ -32,10 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.selecComb = new System.Windows.Forms.ComboBox();
-            this.textValor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtValorN = new System.Windows.Forms.MaskedTextBox();
+            this.selectComb1 = new System.Windows.Forms.CheckBox();
+            this.selectComb2 = new System.Windows.Forms.CheckBox();
+            this.selectComb3 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +56,7 @@
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.Location = new System.Drawing.Point(32, 234);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(100, 35);
+            this.btnVoltar.Size = new System.Drawing.Size(82, 26);
             this.btnVoltar.TabIndex = 3;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
@@ -66,33 +68,11 @@
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Location = new System.Drawing.Point(192, 234);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(100, 35);
+            this.btnSalvar.Size = new System.Drawing.Size(91, 26);
             this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // selecComb
-            // 
-            this.selecComb.BackColor = System.Drawing.SystemColors.Window;
-            this.selecComb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.selecComb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.selecComb.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selecComb.FormattingEnabled = true;
-            this.selecComb.Location = new System.Drawing.Point(58, 108);
-            this.selecComb.Name = "selecComb";
-            this.selecComb.Size = new System.Drawing.Size(203, 22);
-            this.selecComb.TabIndex = 5;
-            // 
-            // textValor
-            // 
-            this.textValor.BackColor = System.Drawing.SystemColors.Info;
-            this.textValor.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textValor.Location = new System.Drawing.Point(102, 174);
-            this.textValor.Name = "textValor";
-            this.textValor.Size = new System.Drawing.Size(100, 20);
-            this.textValor.TabIndex = 6;
-            this.textValor.Text = "R$";
             // 
             // label2
             // 
@@ -114,16 +94,53 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Digite o novo valor(Ex: 2.50)";
             // 
+            // txtValorN
+            // 
+            this.txtValorN.Location = new System.Drawing.Point(134, 165);
+            this.txtValorN.Mask = "0.00";
+            this.txtValorN.Name = "txtValorN";
+            this.txtValorN.Size = new System.Drawing.Size(46, 20);
+            this.txtValorN.TabIndex = 9;
+            // 
+            // selectComb1
+            // 
+            this.selectComb1.AutoSize = true;
+            this.selectComb1.Location = new System.Drawing.Point(71, 104);
+            this.selectComb1.Name = "selectComb1";
+            this.selectComb1.Size = new System.Drawing.Size(15, 14);
+            this.selectComb1.TabIndex = 10;
+            this.selectComb1.UseVisualStyleBackColor = true;
+            // 
+            // selectComb2
+            // 
+            this.selectComb2.AutoSize = true;
+            this.selectComb2.Location = new System.Drawing.Point(151, 104);
+            this.selectComb2.Name = "selectComb2";
+            this.selectComb2.Size = new System.Drawing.Size(15, 14);
+            this.selectComb2.TabIndex = 11;
+            this.selectComb2.UseVisualStyleBackColor = true;
+            // 
+            // selectComb3
+            // 
+            this.selectComb3.AutoSize = true;
+            this.selectComb3.Location = new System.Drawing.Point(233, 104);
+            this.selectComb3.Name = "selectComb3";
+            this.selectComb3.Size = new System.Drawing.Size(15, 14);
+            this.selectComb3.TabIndex = 12;
+            this.selectComb3.UseVisualStyleBackColor = true;
+            // 
             // AtuPreco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(334, 301);
+            this.ClientSize = new System.Drawing.Size(316, 271);
+            this.Controls.Add(this.selectComb3);
+            this.Controls.Add(this.selectComb2);
+            this.Controls.Add(this.selectComb1);
+            this.Controls.Add(this.txtValorN);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textValor);
-            this.Controls.Add(this.selecComb);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label1);
@@ -142,9 +159,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.ComboBox selecComb;
-        private System.Windows.Forms.TextBox textValor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox txtValorN;
+        private System.Windows.Forms.CheckBox selectComb1;
+        private System.Windows.Forms.CheckBox selectComb2;
+        private System.Windows.Forms.CheckBox selectComb3;
     }
 }

@@ -16,6 +16,16 @@ namespace Ifuel
         {
             InitializeComponent();
         }
+        private void TelaPesquisa_Load(object sender, EventArgs e)
+        {
+            vRolagemP.Hide();
+            btnFechar.Hide();
+            txtMResult.Hide();
+            selectComb1.Text = "Gasolina";
+            selectComb2.Text = "Diesel";
+            selectComb3.Text = "Etanol";
+            
+        }
 
         /*Volta para tela de Menu do Usuário*/
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -28,12 +38,49 @@ namespace Ifuel
         /*Botão para pesquisar valores*/
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            string cidade = txtCidade.Text;
-            string bairro = txtBairro.Text;
-            string comb = txtComb.Text;
+            string cidade = null;
+            string bairro = null;
+            string combSelec = null;
+            if (selectComb1.Checked)
+            {
+                cidade = txtCidade.Text;
+                bairro = txtBairro.Text;
+                combSelec = selectComb1.Text;
+            }
+            else if (selectComb2.Checked)
+            {
+                cidade = txtCidade.Text;
+                bairro = txtBairro.Text;
+                combSelec = selectComb2.Text;
+            }
+            else if (selectComb3.Checked)
+            {
+                cidade = txtCidade.Text;
+                bairro = txtBairro.Text;
+                combSelec = selectComb3.Text;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um combustível para continuar a pesquisa!");
+            }
 
-            PesquisarValor pesq = new PesquisarValor(cidade,bairro,comb);
-            pesq.getValor();//Precisa criar outra tela para mostrar os resultados. 
+            //VScrollBar vScrollBar1 = new VScrollBar();
+            PesquisarValor pesq = new PesquisarValor(cidade, bairro, combSelec);
+            pesq.getValor();
+            txtMResult.Text = pesq.resultValor.ToString();
+            txtMResult.Show();
+            btnFechar.Show();
+            txtMResult.Controls.Add(vRolagemP);
+            
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            btnFechar.Hide();
+            txtMResult.Hide();
+            txtBairro.Clear();
+            txtCidade.Clear();
+            txtMResult.Clear();
         }
     }
 }

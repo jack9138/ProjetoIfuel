@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textNota = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -66,7 +67,7 @@
             // 
             // txtNomePosto
             // 
-            this.txtNomePosto.Location = new System.Drawing.Point(144, 84);
+            this.txtNomePosto.Location = new System.Drawing.Point(144, 78);
             this.txtNomePosto.Name = "txtNomePosto";
             this.txtNomePosto.Size = new System.Drawing.Size(200, 20);
             this.txtNomePosto.TabIndex = 2;
@@ -93,7 +94,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
-            this.label2.Location = new System.Drawing.Point(158, 60);
+            this.label2.Location = new System.Drawing.Point(158, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 20);
             this.label2.TabIndex = 6;
@@ -103,17 +104,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(148, 111);
+            this.label3.Location = new System.Drawing.Point(112, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 19);
+            this.label3.Size = new System.Drawing.Size(265, 19);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Digite uma nota para o posto";
+            this.label3.Text = "Digite uma nota para o posto  entre 0 a 5";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(177, 166);
+            this.label4.Location = new System.Drawing.Point(177, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 19);
             this.label4.TabIndex = 9;
@@ -121,10 +122,20 @@
             // 
             // textNota
             // 
-            this.textNota.Location = new System.Drawing.Point(194, 133);
+            this.textNota.Location = new System.Drawing.Point(194, 144);
             this.textNota.Name = "textNota";
             this.textNota.Size = new System.Drawing.Size(100, 20);
             this.textNota.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(128, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(224, 17);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Considerar: 0(Muito ruim) e 5(Ótimo)";
             // 
             // TelaAvaliar
             // 
@@ -132,6 +143,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(494, 311);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.textNota);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -161,5 +173,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textNota;
+        private System.Windows.Forms.Label label5;
     }
 }
