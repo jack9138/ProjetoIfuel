@@ -86,8 +86,8 @@ namespace Ifuel
                             resultValor.Append("  Bairro: " + rValor.BairroP + "\n");
                             resultValor.Append("  Rua: " + rValor.RuaP + "\n");
                             resultValor.Append("  Combustível: " + rValor.NomeComb + "\n");
-                            resultValor.Append("  Valor R$: ");
-                            resultValor.AppendFormat("{0:C}", rValor.ValorC);
+                            resultValor.Append("  Valor R$ ");
+                            resultValor.AppendFormat("{0,1:C}", rValor.ValorC);
                             resultValor.Append("\n");
                             resultValor.Append("\n"+"--------------------------------------" +"\n");
                             

@@ -12,6 +12,7 @@ namespace Ifuel
 {
     public partial class TelaInicial : Form
     {
+        public int telaCad = 0; 
         public TelaInicial()
         {
             InitializeComponent();

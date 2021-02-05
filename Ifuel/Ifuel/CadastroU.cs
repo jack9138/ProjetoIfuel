@@ -122,7 +122,69 @@ namespace Ifuel
 
         public void updateCadastro()
         {
-            //Parametros para atualizar o cadastro
+            try
+            {
+                /*Comandos de Conexão e banco*/
+                MySqlCommand Command = new MySqlCommand();
+                conectar = new MySqlConnection(connectionString);
+                conectar.Open();
+                if (!string.IsNullOrEmpty(NomeUser) || !string.IsNullOrEmpty(Email) || !string.IsNullOrEmpty(CPF))
+                {
+                    #region Inserir dados na Tabela Cliente
+                    Command.Connection = conectar;
+                    Command.CommandType = CommandType.Text;
+                    /*String para inserir cadastro na tabela Cliente*/
+                    Command.CommandText = "INSERT INTO CLIENTE VALUES ( 0,'" + NomeUser + "','" + Email + "','" + CPF + "','" + Bairro + "','" + Cidade + "')";
+                    Command.ExecuteNonQuery();
+
+                    #endregion
+
+                    #region Inserir dados na tabela Usersistema
+
+                    /*Select para buscar o ID do Cliente cadastrado */
+
+                    Command.CommandText = "SELECT MAX(ID_CLIENTE) FROM CLIENTE;";
+                    int Id = (int)Command.ExecuteScalar();
+
+                    /*Inserir dados na tabela USERSISTEMA */
+                    Command.CommandText = "INSERT INTO USERSISTEMA VALUES('" + Email + "','" + Senha + "','" + Id + "')";
+                    Command.ExecuteNonQuery();
+                    #endregion
+
+                    conectar.Close();
+                }
+                else
+                {
+                    Cadastrar = false;
+                }
+
+                Cadastrar = true;
+            }
+
+            /*Trata erros do Banco*/
+            catch (MySqlException erro)
+            {
+                Cadastrar = false;
+                StringBuilder str = new StringBuilder();
+                str.AppendLine(erro.Message);
+                str.Append(erro.SqlState);
+                str.AppendLine("\n");
+                str.AppendLine(erro.StackTrace);
+                messageErro = str.ToString();
+
+                conectar.Close();
+            }
+
+            /*Trata erro do Programa*/
+            catch (IfuelException erro)
+            {
+                Cadastrar = false;
+                StringBuilder str = new StringBuilder();
+                str.AppendLine(erro.Message);
+                str.AppendLine("\n");
+                str.AppendLine(erro.StackTrace);
+                messageErro = str.ToString();
+            }
         }
 
         #endregion

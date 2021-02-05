@@ -13,6 +13,7 @@ namespace Ifuel
 {
     public partial class CadUsuario : Form
     {
+
         /*Variaveis*/
         string NomeUser;
         string CPF;
@@ -26,6 +27,14 @@ namespace Ifuel
         string Cidade;
         string Bairro;
         /*******************/
+
+        public int cadLogin = 0; //Variavel para controle de tela; 
+
+        private void CadUsuario_Load(object sender, EventArgs e)
+        {
+            cadLogin = 2;
+        }
+        /*Colocar forma para chamar os tres métodos de SetCadastro, GetCasdatro*/
         public CadUsuario()
         {
             InitializeComponent();
@@ -105,5 +114,7 @@ namespace Ifuel
             }
             
         }
+
+       
     }
 }

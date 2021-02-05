@@ -12,6 +12,7 @@ namespace Ifuel
 {
     public partial class MenuUser : Form
     {
+        public int Id_usr = 0;
         public MenuUser()
         {
             InitializeComponent();
@@ -36,9 +37,9 @@ namespace Ifuel
         /*Botão para atualizar cadastro do usuário*/
         private void btnAtuCad_Click(object sender, EventArgs e)
         {
-            //Ainda falta criar método para mostrar na Tela de Cadastro os dados já salvos do Uuário
-            CadUsuario cadUsuario = new CadUsuario();
-            cadUsuario.Show();
+            AtuCadUser at = new AtuCadUser();
+            at.Id_usr = Id_usr;
+            at.Show();
             Hide();
         }
 
@@ -49,5 +50,7 @@ namespace Ifuel
             tela.Show();
             Hide();
         }
+
+       
     }
 }

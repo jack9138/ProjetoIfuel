@@ -13,13 +13,13 @@ namespace Ifuel
 {
     public partial class CadPosto : Form
     {
-
-
+        public int cadLogin = 0;
         public CadPosto()
         {
             InitializeComponent();
         }
 
+        /*Colocar forma para chamar os tres métodos de SetCadastro, GetCasdatro*/
         private void CadPosto_Load(object sender, EventArgs e)
         {
             selctComb1.Text = "Gasolina";
@@ -104,9 +104,14 @@ namespace Ifuel
         public void btnVoltar_Click(object sender, EventArgs e)
         {
 
-            LoginPosto login = new LoginPosto();
-            login.Show();
-            Hide();
+
+           
+            
+                LoginPosto login = new LoginPosto();
+                login.Show();
+                Hide();
+
+      
 
         }
 

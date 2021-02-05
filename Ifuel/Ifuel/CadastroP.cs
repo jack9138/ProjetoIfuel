@@ -190,11 +190,6 @@ namespace Ifuel
            
         }
 
-
-        public void updatePCadastro()
-        {
-            //Colocar coisas para atualzar o cadastro do posto
-        }
         #endregion
     }
 }

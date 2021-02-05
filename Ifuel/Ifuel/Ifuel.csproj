@@ -133,6 +133,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtualizarCadPT.cs" />
+    <Compile Include="AtualizarCadUs.cs" />
     <Compile Include="AtualizarSenha.cs" />
     <Compile Include="AtualizarValor.cs" />
     <Compile Include="Avaliacao.cs" />
@@ -141,6 +143,18 @@
     <Compile Include="CadastroU.cs" />
     <Compile Include="IfuelException.cs" />
     <Compile Include="PesquisarValor.cs" />
+    <Compile Include="TelasIfuel\AtuCadPosto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelasIfuel\AtuCadPosto.Designer.cs">
+      <DependentUpon>AtuCadPosto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelasIfuel\AtuCadUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelasIfuel\AtuCadUser.Designer.cs">
+      <DependentUpon>AtuCadUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelasIfuel\AtuPreco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +232,12 @@
       <DependentUpon>TelaVerAvalia.cs</DependentUpon>
     </Compile>
     <Compile Include="Valor.cs" />
+    <EmbeddedResource Include="TelasIfuel\AtuCadPosto.resx">
+      <DependentUpon>AtuCadPosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelasIfuel\AtuCadUser.resx">
+      <DependentUpon>AtuCadUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelasIfuel\AtuPreco.resx">
       <DependentUpon>AtuPreco.cs</DependentUpon>
     </EmbeddedResource>

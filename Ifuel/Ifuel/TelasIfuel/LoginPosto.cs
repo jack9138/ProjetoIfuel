@@ -16,8 +16,10 @@ namespace Ifuel
 {
     public partial class LoginPosto : Form
     {
+
         Login loginP = new Login();
         TelaVerAvalia av = new TelaVerAvalia();
+        CadPosto cadPosto = new CadPosto();
         public int ID_POSTO; 
         public LoginPosto()
         {
@@ -79,7 +81,7 @@ namespace Ifuel
         private void btnCadastro_Click(object sender, EventArgs e)
         {
             /*Chama tela de cadastro*/
-            CadPosto cadPosto = new CadPosto();
+            
             cadPosto.Show();
             Hide();
 

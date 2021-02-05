@@ -17,8 +17,9 @@ namespace Ifuel
 {
     public partial class LoginUser : Form
     {
-       
 
+        public int logar = 1; //Variavel de controle
+        public int Id_usr = 0;
         public LoginUser()
         {
             InitializeComponent();
@@ -33,9 +34,11 @@ namespace Ifuel
                 string Senha = textSenha.Text;
                 Login loginU = new Login();
                 loginU.getLoginUser(Email, Senha);
+                Id_usr = loginU.ConfLogin;
                 if (loginU.Logar == true)
                 {
                     MenuUser menuUser = new MenuUser();
+                    menuUser.Id_usr = Id_usr;
                     menuUser.Show();
                     Hide();
                 }
@@ -82,7 +85,7 @@ namespace Ifuel
 
         private void linkPerdaSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            int logar = 2;
+            logar = 2;
             TelaAtuSenha atuSenha = new TelaAtuSenha();
             atuSenha.Logar = logar;
             atuSenha.Show();

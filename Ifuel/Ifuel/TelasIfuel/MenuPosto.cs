@@ -12,7 +12,8 @@ namespace Ifuel
 {
     public partial class MenuPosto : Form
     {
-        public int Id_posto = 0; 
+        public int Id_posto = 0;
+        public int logado = 1; 
         public MenuPosto()
         {
             InitializeComponent();
@@ -40,11 +41,9 @@ namespace Ifuel
         /*Botão para Atualizar cadastro do Posto*/
         private void btnAtuCad_Click(object sender, EventArgs e)
         {
-            //Criar método para mostrar dados na tela de Cadastro e para tratar dados alterados e salvar
-            CadPosto cadPosto = new CadPosto();
-            cadPosto.Show();
+            AtuCadPosto atu = new AtuCadPosto();
+            atu.Show();
             Hide();
-           
         }
 
         /*Botão para sair(Fecha programa)*/
